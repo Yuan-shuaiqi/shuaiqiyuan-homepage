@@ -55,13 +55,13 @@ nav ul li a {
 
 .research-figures {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     justify-content: center;
     margin: 1rem 0;
 }
 
 .research-figure {
-    max-width: 35%;
+    max-width: 40%;
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
