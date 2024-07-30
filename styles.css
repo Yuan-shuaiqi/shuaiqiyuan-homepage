@@ -46,6 +46,7 @@ nav ul li a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     border: 1px solid #0b3d91; /* Add a Delft blue border */
+    text-align: left;
 }
 
 .container {
@@ -55,7 +56,7 @@ nav ul li a:hover {
 }
 
 .profile-photo {
-    max-width: 150px;
+    max-width: 300px;
     border-radius: 50%;
     margin: 1rem 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -64,7 +65,7 @@ nav ul li a:hover {
 
 .research-figures {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     justify-content: center;
     margin: 1rem 0;
 }
