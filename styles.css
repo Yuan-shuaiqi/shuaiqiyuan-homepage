@@ -57,7 +57,7 @@ nav ul li a:hover {
 }
 
 #hero p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -81,7 +81,7 @@ nav ul li a:hover {
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    text-align: center;
+    text-align: left;
 }
 
 .container {
@@ -90,7 +90,7 @@ nav ul li a:hover {
 }
 
 .profile-photo {
-    max-width: 150px;
+    max-width: 300px;
     border-radius: 50%;
     margin: 1rem 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -99,7 +99,7 @@ nav ul li a:hover {
 
 .research-figures {
     display: flex;
-    gap: 3rem;
+    gap: 5rem;
     justify-content: center;
     margin: 1rem 0;
 }
