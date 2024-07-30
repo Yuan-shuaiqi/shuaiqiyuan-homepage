@@ -99,7 +99,7 @@ nav ul li a:hover {
 
 .research-figures {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     justify-content: center;
     margin: 1rem 0;
 }
@@ -176,7 +176,12 @@ ul li {
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
 }
-
+.highlight2 {
+    background-color: none;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
 footer {
     background: #0b3d91;
     color: #fff;
