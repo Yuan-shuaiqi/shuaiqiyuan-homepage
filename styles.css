@@ -46,8 +46,7 @@ nav ul li a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     border: 1px solid #0b3d91; /* Add a Delft blue border */
-    text-align: left;
-}
+    }
 
 .container {
     width: 80%;
