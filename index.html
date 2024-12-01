@@ -6,11 +6,131 @@
     <title>Shuaiqi Yuan - Professional Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        #hero {
+            background: linear-gradient(to right, #003366, #0066cc);
+            color: #fff;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        #hero .btn {
+            background: #fff;
+            color: #003366;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #hero .btn:hover {
+            background: #cce5ff;
+        }
+        .section {
+            padding: 3rem 0;
+            margin: 2rem 0;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            text-align: left;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .about-content {
+            display: flex;
+            gap: 2rem;
+        }
+        .profile-photo {
+            max-width: 200px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid #003366;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .timeline-item {
+            padding: 1rem;
+            border-left: 4px solid #003366;
+        }
+        .research-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .highlight-card {
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #003366;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        form label {
+            font-weight: bold;
+            align-self: flex-start;
+        }
+        form input, form textarea, form button {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 500px;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
 </head>
 <body>
-    <header class="professional-header">
+    <header>
         <div class="container">
-            <div class="logo">S.Yuan</div>
+            <div class="logo">S. Yuan</div>
             <nav>
                 <ul>
                     <li><a href="#about">About Me</a></li>
@@ -23,31 +143,31 @@
         </div>
     </header>
     
-    <section id="hero" class="professional-hero">
+    <section id="hero">
         <div class="container">
             <h1>Welcome to My Professional Website</h1>
-            <p>Explore my research, publications, and professional journey.</p>
+            <p>Committed to advancing safety and security through rigorous research.</p>
             <a href="#about" class="btn">Learn More</a>
         </div>
     </section>
     
-    <section id="about" class="section professional-section">
+    <section id="about" class="section">
         <div class="container">
             <div class="about-content">
-                <img src="images/your-photo.jpg" alt="Shuaiqi Yuan Photo" class="profile-photo">
-                <div class="about-text">
-                    <h2>Shuaiqi Yuan (&#x539F;&#x5E05;&#x742A;)</h2>
-                    <p>I am dedicated to developing quantitative models for reliability, risk, and resilience assessment of engineering systems. My expertise includes industrial cyber-physical systems, chemical process safety, dynamic risk assessment, fault diagnosis, uncertainty quantification, and reliability assurance of AI in safety-critical settings.</p>
-                    <p>I have published around thirty peer-reviewed papers and several book chapters in process safety and security. You can explore my full publication list on <a href="https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en" target="_blank">Google Scholar</a>. I also serve as a reviewer for over twenty international journals, including Safety Science and Reliability Engineering & System Safety.</p>
+                <img src="images/your-photo.jpg" alt="Your Photo" class="profile-photo">
+                <div>
+                    <h2>About Me</h2>
+                    <p>I am committed to developing quantitative models for assessing the reliability, risk, and resilience of engineering systems, focusing on ensuring safety and security. My research encompasses industrial cyber-physical systems, chemical process safety, dynamic risk assessment, fault diagnosis, uncertainty quantification in machine learning, and trustworthy AI for safety-critical applications.</p>
+                    <p>I have authored approximately 30 peer-reviewed publications and contributed several book chapters in the fields of process safety and security. For a comprehensive overview of my work, please visit my <a href="https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en" target="_blank">Google Scholar</a> profile. Additionally, I actively contribute to the academic community as a reviewer for over 20 international journals, including Safety Science and Reliability Engineering & System Safety.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="education" class="section professional-section">
+    <section id="education" class="section">
         <div class="container">
             <h2>Educational Background</h2>
-            <div class="timeline professional-timeline">
+            <div class="timeline">
                 <div class="timeline-item">
                     <h3>Ph.D. in Safety and Security Science</h3>
                     <p>Delft University of Technology, 2020.11 ~ 2024.11</p>
@@ -64,49 +184,41 @@
         </div>
     </section>
     
-    <section id="research" class="section professional-section">
+    <section id="research" class="section">
         <div class="container">
-            <h2>Research Highlights</h2>
-            <div class="research-highlights professional-research">
-                <div class="highlight-card professional-card">
-                    <img src="images/research-figure1.jpg" alt="Probabilistic Risk Assessment">
-                    <h3>Probabilistic Risk Assessment</h3>
-                    <p>Quantitative risk modeling of engineering systems, including industrial control systems and urban critical infrastructures.</p>
+            <h2>Research Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Ph.D. Candidate, Safety and Security Science Group, TU Delft</h3>
+                    <p>Dynamic and Integrated Safety and Security Barrier Management in the Chemical Process Industries. Nov 2020 - Nov 2024</p>
                 </div>
-                <div class="highlight-card professional-card">
-                    <img src="images/research-figure2.png" alt="AI for Safety & Security">
-                    <h3>AI for Safety & Security</h3>
-                    <p>Leveraging AI algorithms to enhance the safety and security of engineering systems.</p>
+                <div class="timeline-item">
+                    <h3>Research Assistant, TU Delft</h3>
+                    <p>Project on "Value of Safety", funded by Lloyd's Register Foundation. Apr 2021 - Oct 2021</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Collaboration on Safety-Instrument (COSI)</h3>
+                    <p>Enhancing cross-plant safety in chemical industrial parks, funded by the Dutch Ministry of Infrastructure. Jul 2021 - Mar 2022</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="publications" class="section professional-section">
+    <section id="publications" class="section">
         <div class="container">
             <h2>Selected Publications</h2>
-            <div class="publications-list">
-                <div class="publication-item">
-                    <h3>Journal Articles</h3>
-                    <ul>
-                        <li>Yuan, S., Reniers, G., & Yang, M. (2024). Integrated management of safety and security barriers in chemical plants. <i>Reliability Engineering & System Safety</i>.</li>
-                        <li>Yuan, S., Yang, M., & Reniers, G. (2024). Integrated process safety and process security risk assessment. <i>Computers in Industry</i>.</li>
-                    </ul>
-                </div>
-                <div class="publication-item">
-                    <h3>Book Chapters</h3>
-                    <ul>
-                        <li>Yuan, S., Chen, C., Yang, M., & Reniers, G. (2021). Methods for domino effect risk management decision-making. <i>Methods in Chemical Process Safety</i>.</li>
-                    </ul>
-                </div>
-            </div>
+            <ul>
+                <li>Yuan, S., Reniers, G., & Yang, M. (2024). Integrated management of safety and security barriers in chemical plants. <i>Reliability Engineering & System Safety</i>.</li>
+                <li>Yuan, S., Yang, M., & Reniers, G. (2024). Integrated process safety and process security risk assessment. <i>Computers in Industry</i>.</li>
+                <li>Yuan, S., Reniers, G., Yang, M., & Bai, Y. (2023). Cost-effective maintenance of safety and security barriers. <i>Process Safety and Environmental Protection</i>.</li>
+            </ul>
         </div>
     </section>
     
-    <section id="contact" class="section professional-section">
+    <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
-            <form id="contact-form" class="professional-form">
+            <form id="contact-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -119,17 +231,16 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit" class="btn professional-btn">Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </section>
 
-    <footer class="professional-footer">
+    <footer>
         <div class="container">
             <p>&copy; 2024 Shuaiqi Yuan. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
