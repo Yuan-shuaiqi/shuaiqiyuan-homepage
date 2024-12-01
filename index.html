@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shuaiqi Yuan - Home Page</title>
+    <title>Shuaiqi Yuan - Professional Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="professional-header">
         <div class="container">
             <div class="logo">S.Yuan</div>
             <nav>
@@ -23,84 +23,90 @@
         </div>
     </header>
     
-    <section id="hero">
+    <section id="hero" class="professional-hero">
         <div class="container">
-            <h1>Welcome to My Personal Website</h1>
-            <p>Discover my research, publications, and more.</p>
+            <h1>Welcome to My Professional Website</h1>
+            <p>Explore my research, publications, and professional journey.</p>
             <a href="#about" class="btn">Learn More</a>
         </div>
     </section>
     
-    <section id="about" class="section">
+    <section id="about" class="section professional-section">
         <div class="container">
-            <img src="images/your-photo.jpg" alt="Your Photo" class="profile-photo">
-            <h2>Shuaiqi Yuan(原帅琪)</h2>
-            <p>I am dedicated to developing quantitative models for reliability, risk, and resilience assessment of engineering systems. My research interests include industrial cyber-physical systems, chemical process safety, dynamic risk assessment, fault diagnosis, uncertainty quantification, and reliability assurance of AI in safety-critical settings.</p>
-            <p>I have published around thirty peer-review papers and several book chapters in the domains of process safety and security. A full publication list can be found in my Google Scholar: https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en. I am a reviewer for more than twenty international journals in the safety science and risk science fields, such as Safety Science, Reliability Engineering & System Safety, Risk Analysis, etc.</p>
+            <div class="about-content">
+                <img src="images/your-photo.jpg" alt="Shuaiqi Yuan Photo" class="profile-photo">
+                <div class="about-text">
+                    <h2>Shuaiqi Yuan (&#x539F;&#x5E05;&#x742A;)</h2>
+                    <p>I am a dedicated researcher developing quantitative models for reliability, risk, and resilience assessment of engineering systems. My expertise includes industrial cyber-physical systems, chemical process safety, dynamic risk assessment, fault diagnosis, uncertainty quantification, and reliability assurance of AI in safety-critical settings.</p>
+                    <p>I have published around thirty peer-reviewed papers and several book chapters in process safety and security. You can explore my full publication list on <a href="https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en" target="_blank">Google Scholar</a>. I also serve as a reviewer for over twenty international journals, including Safety Science and Reliability Engineering & System Safety.</p>
+                </div>
+            </div>
         </div>
     </section>
     
-    <section id="education" class="section">
+    <section id="education" class="section professional-section">
         <div class="container">
             <h2>Educational Background</h2>
-            <ul>
-                <li class="highlight2">Ph.D. Degree in Safety and Security Science, Delft University of Technology, 2024</li>
-                <li class="highlight2">M.Eng. Degree in Safety Engineering, China University of Mining and Technology, Beijing, 2020</li>
-                <li class="highlight2">B.Eng. Degree in Mining Engineering, China University of Mining and Technology, Beijing, 2017</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section id="research" class="section">
-        <div class="container">
-            <h2>Research Highlights/Interests</h2>
-            <div class="research-figures">
-                <img src="images/research-figure1.jpg" alt="Research Domain 1" class="research-figure">
-                <img src="images/research-figure2.png" alt="Research Domain 2" class="research-figure">
+            <div class="timeline professional-timeline">
+                <div class="timeline-item">
+                    <h3>Ph.D. in Safety and Security Science</h3>
+                    <p>Delft University of Technology, 2024</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>M.Eng. in Safety Engineering</h3>
+                    <p>China University of Mining and Technology, Beijing, 2020</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>B.Eng. in Mining Engineering</h3>
+                    <p>China University of Mining and Technology, Beijing, 2017</p>
+                </div>
             </div>
-            <ul>
-                <li> <span class="highlight2"> Probabilistic risk assessment </span>- quantitative risk modeling of engineering systems, such as industrial control systems and urban critical infrastructures.</li>
-                <li> <span class="highlight2"> Quantitative reliability and resilience modeling </span>- quantitative reliability/resilience modeling of engineering systems for the sake of safety or security.</li>
-                <li> <span class="highlight2"> AI for safety & security </span>- leverage AI algorithms to lift safety and security performance of engineering systems.</li>
-                <li> <span class="highlight2"> Reliability assurance of AI </span>- Uncertainty quantification of ML models; risk-aware ML for mission-critical decision settings.</li>
-                <li> <span class="highlight2"> Decision-making under uncertainty </span>- risk-based or uncertainty-informed decision-making pertinent to safety and security assurance.</li>
-            </ul>
         </div>
     </section>
     
-    <section id="publications" class="section">
+    <section id="research" class="section professional-section">
         <div class="container">
-            <h2>Publication List(selected)</h2>
-            <ul>
-                 <li class="highlight">Journal Articles</li>
-                <li>Yuan, S., Reniers, G., & Yang, M. (2024). Integrated management of safety and security barriers in chemical plants to cope with emerging cyber-physical attack risks under uncertainties. Reliability Engineering & System Safety, 250, [110320].</li>
-                <li>Yuan, S., Yang, M., & Reniers, G. (2024). Integrated process safety and process security risk assessment of industrial cyber-physical systems in chemical plants. Computers in Industry, 155, [104056].</li>
-                <li>Yuan, S., Reniers, G., Yang, M., & Bai, Y. (2023). Cost-effective maintenance of safety and security barriers in the chemical process industries via genetic algorithm. Process Safety and Environmental Protection, 170, 356-371.</li>
-                <li>Yuan, S., Cai, J., Reniers, G., Yang, M., Chen, C., & Wu, J. (2022). Safety barrier performance assessment by integrating computational fluid dynamics and evacuation modeling for toxic gas leakage scenarios. Reliability Engineering and System Safety, 226, [108719].</li>
-                <li>Yuan, S., Reniers, G., & Yang, M. (2023). Dynamic-risk-informed safety barrier management: An application to cost-effective barrier optimization based on data from multiple sources. Journal of Loss Prevention in the Process Industries, 83, [105034].</li>
-                <li>Yuan, S., Yang, M., Reniers, G., Chen, C., & Wu, J. (2022). Safety barriers in the chemical process industries: A state-of-the-art review on their classification, assessment, and management. Safety Science, 148, [105647].</li>
-                <li>Wu, J., Cai, J., Yuan, S*., Zhang, X., & Reniers, G. (2021). CFD and EnKF coupling estimation of LNG leakage and dispersion. Safety Science, 139, [105263].</li>
-                <li>Yuan, S., Wu, J., Zhang, X., & Liu, W. (2019). EnKF-based estimation of natural gas release and dispersion in an underground tunnel. Journal of Loss Prevention in the Process Industries, 62, [103931].</li>
-                <li>Chen, X., Lin, W., Liu, C., Yang, F*., Guo, Y., Li, X., Yuan, S*., & Reniers, G. (2023). An integrated EDIB model for probabilistic risk analysis of natural gas pipeline leakage accidents. Journal of Loss Prevention in the Process Industries, 83, [105027].</li>
-            </ul>
-            <ul>
-                 <li class="highlight">Book Chapters</li>
-                <li>Yuan, S., Chen, C., Yang, M., & Reniers, G. (2021). Methods for domino effect risk management decision-making. In Methods in Chemical Process Safety (Vol. 5, pp. 461-494). Elsevier.</li>
-                <li>Yuan, S., Xu, Y., Bai, Y., Reniers, G., & Yang, M. (2023). Conceptual and practical applications of ISD. In Methods in Chemical Process Safety. Elsevier.</li>
-                <li>Chen, C., Reniers, G., Yang, M., & Yuan, S. (2021). Domino effect security risk assessment. In Methods in Chemical Process Safety (Vol. 5, pp. 309-330). Elsevier.</li>
-            </ul>
-            <ul>
-                <li class="highlight">Technical Reports</li>
-                <li>Yang, M., Chen, C., Yuan, S., Hermias, J., & Reniers, G. L. L. M. E. (2022). Value of Safety. TU Delft library.</li>
-                <li>Van Nunen, K. L. L, Reniers, G. L. L. M. E, Yang, M., Chen, C., & Yuan, S. (2021). (Petro)chemical clusters and safety: A cluster-specific ranking of safety parameters. TU Delft library.</li>
-            </ul>
+            <h2>Research Highlights</h2>
+            <div class="research-highlights professional-research">
+                <div class="highlight-card professional-card">
+                    <img src="images/research-figure1.jpg" alt="Probabilistic Risk Assessment">
+                    <h3>Probabilistic Risk Assessment</h3>
+                    <p>Quantitative risk modeling of engineering systems, including industrial control systems and urban critical infrastructures.</p>
+                </div>
+                <div class="highlight-card professional-card">
+                    <img src="images/research-figure2.png" alt="AI for Safety & Security">
+                    <h3>AI for Safety & Security</h3>
+                    <p>Leveraging AI algorithms to enhance the safety and security of engineering systems.</p>
+                </div>
+            </div>
         </div>
     </section>
     
-    <section id="contact" class="section">
+    <section id="publications" class="section professional-section">
+        <div class="container">
+            <h2>Selected Publications</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h3>Journal Articles</h3>
+                    <ul>
+                        <li>Yuan, S., Reniers, G., & Yang, M. (2024). Integrated management of safety and security barriers in chemical plants. <i>Reliability Engineering & System Safety</i>.</li>
+                        <li>Yuan, S., Yang, M., & Reniers, G. (2024). Integrated process safety and process security risk assessment. <i>Computers in Industry</i>.</li>
+                    </ul>
+                </div>
+                <div class="publication-item">
+                    <h3>Book Chapters</h3>
+                    <ul>
+                        <li>Yuan, S., Chen, C., Yang, M., & Reniers, G. (2021). Methods for domino effect risk management decision-making. <i>Methods in Chemical Process Safety</i>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="section professional-section">
         <div class="container">
             <h2>Contact</h2>
-            <form id="contact-form">
+            <form id="contact-form" class="professional-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -113,14 +119,14 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn professional-btn">Submit</button>
             </form>
         </div>
     </section>
 
-    <footer>
+    <footer class="professional-footer">
         <div class="container">
-            <p>&copy; 2024 shuaiqi yuan. All rights reserved.</p>
+            <p>&copy; 2024 Shuaiqi Yuan. All rights reserved.</p>
         </div>
     </footer>
 
