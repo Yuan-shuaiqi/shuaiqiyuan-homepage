@@ -1,14 +1,11 @@
 
-```css
-/* styles.css */
-/* Base styling and color variables */
-:root {  
-  --primary: #0a192f;  
-  --secondary: #112240;  
-  --accent: #64ffda;  
-  --text: #ccd6f6;  
-  --light: #8892b0;  
-}  
+:root {
+  --primary: #0a192f;
+  --secondary: #112240;
+  --accent: #64ffda;
+  --text: #ccd6f6;
+  --light: #8892b0;
+}
 
 /* Reset and base styles */
 * {
@@ -59,6 +56,17 @@ a:hover {
   background-color: var(--secondary);
 }
 
+.section-title {
+  font-size: 1.875rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Grid and flex layouts */
 .grid {
   display: grid;
@@ -97,16 +105,80 @@ a:hover {
   justify-content: center;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-8 {
   gap: 2rem;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
 .space-y-2 > * + * {
   margin-top: 0.5rem;
+}
+
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
 }
 
 .space-y-4 > * + * {
@@ -117,12 +189,16 @@ a:hover {
   margin-top: 1.5rem;
 }
 
-.space-y-8 > * + * {
-  margin-top: 2rem;
+.font-semibold {
+  font-weight: 600;
 }
 
-.space-x-4 > * + * {
-  margin-left: 1rem;
+.text-accent {
+  color: var(--accent);
+}
+
+.text-light {
+  color: var(--light);
 }
 
 /* Navigation */
@@ -152,6 +228,7 @@ nav .container {
 
 .nav-links {
   display: flex;
+  list-style: none;
   gap: 2rem;
 }
 
@@ -174,6 +251,14 @@ nav .container {
   padding: 0.5rem 1rem;
 }
 
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
 .mobile-menu a {
   display: block;
   padding: 0.5rem 0;
@@ -184,6 +269,7 @@ nav .container {
   height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 5rem;
 }
 
 .hero-content {
@@ -192,38 +278,27 @@ nav .container {
   align-items: center;
 }
 
-.profile-image {  
-  position: relative;  
-  width: 16rem;  
-  height: 16rem;  
-  overflow: hidden;  
-  border-radius: 50%;  
-  border: 4px solid var(--accent);  
-  margin-bottom: 2rem;  
-  display: flex;  
-  align-items: center;  
-  justify-content: center;  
-}  
-
-.profile-image img {  
-  min-width: 100%;  
-  min-height: 100%;  
-  width: auto;  
-  height: auto;  
-  max-width: 150%; /* Allows image to be zoomed out more */  
-  object-fit: cover;  
-}
-
-.profile-placeholder {
-  width: 100%;
-  height: 100%;
-  background-color: var(--secondary);
+/* FIXED PROFILE IMAGE CONTAINER */
+.profile-image {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
-  font-size: 4rem;
-  font-weight: 700;
+}
+
+/* FIXED IMAGE STYLING FOR BETTER DISPLAY */
+.profile-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .hero-text {
@@ -312,6 +387,7 @@ nav .container {
 /* Timeline */
 .timeline {
   position: relative;
+  padding: 2rem 0;
 }
 
 .timeline::before {
@@ -331,13 +407,13 @@ nav .container {
   width: 50%;
 }
 
-.timeline-item:nth-child(even) {
+.timeline-item:nth-child(odd) {
   margin-left: auto;
-  padding-left: 2rem;
+  padding-left: 3rem;
 }
 
-.timeline-item:nth-child(odd) {
-  padding-right: 2rem;
+.timeline-item:nth-child(even) {
+  padding-right: 3rem;
 }
 
 .timeline-dot {
@@ -349,11 +425,11 @@ nav .container {
   top: 1.5rem;
 }
 
-.timeline-item:nth-child(even) .timeline-dot {
+.timeline-item:nth-child(odd) .timeline-dot {
   left: -0.75rem;
 }
 
-.timeline-item:nth-child(odd) .timeline-dot {
+.timeline-item:nth-child(even) .timeline-dot {
   right: -0.75rem;
 }
 
@@ -546,18 +622,10 @@ footer {
     display: block;
   }
   
-  .mobile-menu.active {
-    display: block;
-  }
-  
   .grid-2,
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
-  }
-  
-  .hero {
-    padding-top: 5rem;
   }
   
   .hero-content {
@@ -593,7 +661,10 @@ footer {
   }
   
   .contact-section {
-    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .grid-2.gap-8 {
+    gap: 2rem;
   }
 }
-```
