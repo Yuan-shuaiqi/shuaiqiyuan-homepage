@@ -5,161 +5,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Yuan Shuaiqi | Academic Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0a192f',
-                        secondary: '#112240',
-                        accent: '#64ffda',
-                        text: '#ccd6f6',
-                        light: '#8892b0'
-                    },
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-primary text-text">
+<body>
     <!-- Navigation -->
-    <nav class="bg-secondary shadow-md fixed w-full z-10">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold text-accent">YUAN SHUAIQI</div>
-            <ul class="hidden md:flex space-x-8">
-                <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
-                <li><a href="#experience" class="hover:text-accent transition-colors">Experience</a></li>
-                <li><a href="#research" class="hover:text-accent transition-colors">Research</a></li>
-                <li><a href="#publications" class="hover:text-accent transition-colors">Publications</a></li>
-                <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+    <nav>
+        <div class="container">
+            <div class="nav-logo">YUAN SHUAIQI</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="md:hidden">
-                <button id="menu-button" class="text-accent focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
+            <button id="menu-button" class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div id="mobile-menu" class="hidden bg-secondary md:hidden">
-            <ul class="py-2 px-4 space-y-2">
-                <li><a href="#about" class="block hover:text-accent transition-colors py-2">About</a></li>
-                <li><a href="#experience" class="block hover:text-accent transition-colors py-2">Experience</a></li>
-                <li><a href="#research" class="block hover:text-accent transition-colors py-2">Research</a></li>
-                <li><a href="#publications" class="block hover:text-accent transition-colors py-2">Publications</a></li>
-                <li><a href="#contact" class="block hover:text-accent transition-colors py-2">Contact</a></li>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="h-screen flex items-center" id="about">
-        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
-                <div class="relative w-64 h-64 overflow-hidden rounded-full border-4 border-accent">
-                    <div class="w-full h-full bg-secondary flex items-center justify-center text-accent text-6xl">
-                        <span>SY</span>
-                    </div>
+    <header class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="images/your-photo.jpg" alt="Dr. Yuan Shuaiqi" class="w-full h-full object-cover">
                 </div>
-            </div>
-            <div class="md:w-1/2">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">YUAN SHUAIQI (原帅琪)</h1>
-                <h2 class="text-2xl text-accent mb-6">Postdoctoral Fellow</h2>
-                <p class="text-light text-lg mb-6">
-                    Department of Industrial and Systems Engineering,<br>
-                    The Hong Kong Polytechnic University
-                </p>
-                <p class="text-light mb-8">
-                    A researcher focused on industrial safety, cyber-physical systems, and trustworthy AI. My work aims to enhance safety 
-                    and security in industrial environments through advanced risk assessment methodologies.
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#contact" class="bg-transparent border border-accent text-accent px-6 py-3 rounded hover:bg-accent hover:bg-opacity-10 transition-colors">
-                        Contact Me
-                    </a>
-                    <a href="#research" class="bg-accent text-primary px-6 py-3 rounded hover:bg-opacity-90 transition-colors">
-                        My Research
-                    </a>
+                <div class="hero-text">
+                    <h1 class="hero-name">YUAN SHUAIQI (原帅琪)</h1>
+                    <h2 class="hero-title">Postdoctoral Fellow</h2>
+                    <p class="hero-subtitle">
+                        Department of Industrial and Systems Engineering,<br>
+                        The Hong Kong Polytechnic University
+                    </p>
+                    <p class="mb-8">
+                        A researcher focused on industrial safety, cyber-physical systems, and trustworthy AI. My work aims to enhance safety 
+                        and security in industrial environments through advanced risk assessment methodologies.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-outline">
+                            Contact Me
+                        </a>
+                        <a href="#research" class="btn btn-primary">
+                            My Research
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Education Section -->
-    <section class="py-20 bg-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Educational Background</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-primary p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-semibold">Ph.D. in Safety and Security Science</h3>
+    <section class="section section-secondary">
+        <div class="container">
+            <h2 class="section-title text-center">Educational Background</h2>
+            <div class="grid grid-3 gap-8">
+                <div class="card">
+                    <div class="flex justify-between mb-4">
+                        <h3 class="card-title">Ph.D. in Safety and Security Science</h3>
                         <span class="text-accent">2020-2024</span>
                     </div>
-                    <p class="text-light mb-2">Delft University of Technology</p>
+                    <p class="card-subtitle">Delft University of Technology</p>
                     <p class="text-light">TPM Faculty, Safety and Security Science Group</p>
                 </div>
-                <div class="bg-primary p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-semibold">M.Eng. in Safety Engineering</h3>
+                <div class="card">
+                    <div class="flex justify-between mb-4">
+                        <h3 class="card-title">M.Eng. in Safety Engineering</h3>
                         <span class="text-accent">2017-2020</span>
                     </div>
-                    <p class="text-light mb-2">China University of Mining and Technology, Beijing</p>
+                    <p class="card-subtitle">China University of Mining and Technology, Beijing</p>
                 </div>
-                <div class="bg-primary p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-semibold">B.Eng. in Mining Engineering</h3>
+                <div class="card">
+                    <div class="flex justify-between mb-4">
+                        <h3 class="card-title">B.Eng. in Mining Engineering</h3>
                         <span class="text-accent">2013-2017</span>
                     </div>
-                    <p class="text-light mb-2">China University of Mining and Technology, Beijing</p>
+                    <p class="card-subtitle">China University of Mining and Technology, Beijing</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Work Experience Section -->
-    <section class="py-20" id="experience">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Work & Research Experience</h2>
-            <div class="relative">
-                <!-- Timeline Line -->
-                <div class="absolute left-0 md:left-1/2 top-0 h-full w-1 bg-accent transform -translate-x-1/2"></div>
-                
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title text-center">Work & Research Experience</h2>
+            <div class="timeline">
                 <!-- Experience Items -->
-                <div class="mb-20 md:mb-0 relative md:w-1/2 md:ml-auto md:pr-8">
-                    <div class="absolute -left-3 md:-left-4 top-6 h-6 w-6 rounded-full bg-accent transform md:translate-x-0.5"></div>
-                    <div class="bg-secondary p-6 rounded-lg shadow-xl">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold">Postdoctoral Fellow</h3>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="card-title">Postdoctoral Fellow</h3>
                             <span class="text-accent">Feb 2025-Present</span>
                         </div>
-                        <p class="text-light mb-2">Department of Industrial and Systems Engineering, PolyU, Hong Kong</p>
+                        <p class="card-subtitle">Department of Industrial and Systems Engineering, PolyU, Hong Kong</p>
                         <p class="mb-2">Project: <span class="text-accent">"Risk Management and Safety Assurance of Intelligent Systems"</span></p>
                         <p class="text-light">Supervisor: Dr. Xiaoge Zhang</p>
                     </div>
                 </div>
                 
-                <div class="md:my-24 relative md:w-1/2 md:pr-8">
-                    <div class="absolute -left-3 md:left-auto md:-right-3 top-6 h-6 w-6 rounded-full bg-accent transform md:-translate-x-0.5"></div>
-                    <div class="bg-secondary p-6 rounded-lg shadow-xl">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold">Research Assistant</h3>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="card-title">Research Assistant</h3>
                             <span class="text-accent">Apr 2021-Oct 2021</span>
                         </div>
-                        <p class="text-light mb-2">Safety and Security Science Group, TU Delft, The Netherlands</p>
+                        <p class="card-subtitle">Safety and Security Science Group, TU Delft, The Netherlands</p>
                         <p class="mb-2">Project: <span class="text-accent">"Value of Safety"</span></p>
                         <p class="text-light">Granted by Lloyd's Register Foundation (LRF)</p>
                         <p class="text-light">Supervisor: Dr. Ming Yang</p>
                     </div>
                 </div>
                 
-                <div class="mt-20 relative md:w-1/2 md:ml-auto md:pr-8">
-                    <div class="absolute -left-3 md:-left-4 top-6 h-6 w-6 rounded-full bg-accent transform md:translate-x-0.5"></div>
-                    <div class="bg-secondary p-6 rounded-lg shadow-xl">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold">Research Assistant</h3>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="card-title">Research Assistant</h3>
                             <span class="text-accent">Jul 2021-Mar 2022</span>
                         </div>
-                        <p class="text-light mb-2">Safety and Security Science Group, TU Delft, The Netherlands</p>
+                        <p class="card-subtitle">Safety and Security Science Group, TU Delft, The Netherlands</p>
                         <p class="mb-2">Project: <span class="text-accent">"Collaboration on Safety - Instrument (COSI)"</span></p>
                         <p class="text-light">For enhancing cross-plant safety in chemical industrial parks</p>
                         <p class="text-light">Granted by the Dutch Ministry of Infrastructure and the Environment</p>
@@ -171,62 +149,62 @@
     </section>
 
     <!-- Research Interests Section -->
-    <section class="py-20 bg-secondary" id="research">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Research Interests</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-industry text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Industrial Safety</h3>
+    <section class="section section-secondary" id="research">
+        <div class="container">
+            <h2 class="section-title text-center">Research Interests</h2>
+            <div class="grid grid-4 gap-6">
+                <div class="interest-item">
+                    <i class="fas fa-industry interest-icon"></i>
+                    <h3>Industrial Safety</h3>
                 </div>
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-network-wired text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Cyber-Physical Systems</h3>
+                <div class="interest-item">
+                    <i class="fas fa-network-wired interest-icon"></i>
+                    <h3>Cyber-Physical Systems</h3>
                 </div>
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-chart-line text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Probabilistic Risk Assessment</h3>
+                <div class="interest-item">
+                    <i class="fas fa-chart-line interest-icon"></i>
+                    <h3>Probabilistic Risk Assessment</h3>
                 </div>
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-project-diagram text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Resilience Modeling</h3>
+                <div class="interest-item">
+                    <i class="fas fa-project-diagram interest-icon"></i>
+                    <h3>Resilience Modeling</h3>
                 </div>
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-random text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Uncertainty Quantification</h3>
+                <div class="interest-item">
+                    <i class="fas fa-random interest-icon"></i>
+                    <h3>Uncertainty Quantification</h3>
                 </div>
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-robot text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Trustworthy AI</h3>
+                <div class="interest-item">
+                    <i class="fas fa-robot interest-icon"></i>
+                    <h3>Trustworthy AI</h3>
                 </div>
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-tools text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Reliability and Maintenance</h3>
+                <div class="interest-item">
+                    <i class="fas fa-tools interest-icon"></i>
+                    <h3>Reliability and Maintenance</h3>
                 </div>
-                <div class="bg-primary p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <i class="fas fa-search text-accent text-4xl mb-4"></i>
-                    <h3 class="font-semibold">Fault Diagnosis</h3>
+                <div class="interest-item">
+                    <i class="fas fa-search interest-icon"></i>
+                    <h3>Fault Diagnosis</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Professional Skills</h2>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title text-center">Professional Skills</h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid grid-2 gap-12">
                 <div>
-                    <h3 class="text-xl font-semibold mb-6 text-accent">Technical/Research Skills</h3>
+                    <h3 class="subtitle text-accent">Technical/Research Skills</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-1">
                                 <span>Quantitative Risk/Resilience Modeling</span>
                                 <span>90%</span>
                             </div>
-                            <div class="h-2 bg-secondary rounded-full">
-                                <div class="h-full bg-accent rounded-full" style="width: 90%"></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
                             </div>
                         </div>
                         <div>
@@ -234,8 +212,8 @@
                                 <span>Bayesian Network</span>
                                 <span>85%</span>
                             </div>
-                            <div class="h-2 bg-secondary rounded-full">
-                                <div class="h-full bg-accent rounded-full" style="width: 85%"></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
                             </div>
                         </div>
                         <div>
@@ -243,8 +221,8 @@
                                 <span>System Optimizations</span>
                                 <span>80%</span>
                             </div>
-                            <div class="h-2 bg-secondary rounded-full">
-                                <div class="h-full bg-accent rounded-full" style="width: 80%"></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
                             </div>
                         </div>
                         <div>
@@ -252,8 +230,8 @@
                                 <span>Machine Learning & Deep Learning</span>
                                 <span>75%</span>
                             </div>
-                            <div class="h-2 bg-secondary rounded-full">
-                                <div class="h-full bg-accent rounded-full" style="width: 75%"></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
                             </div>
                         </div>
                         <div>
@@ -261,17 +239,17 @@
                                 <span>CFD Simulations</span>
                                 <span>70%</span>
                             </div>
-                            <div class="h-2 bg-secondary rounded-full">
-                                <div class="h-full bg-accent rounded-full" style="width: 70%"></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-semibold mb-6 text-accent">Programming & Languages</h3>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-secondary p-4 rounded-lg">
+                    <h3 class="subtitle text-accent">Programming & Languages</h3>
+                    <div class="grid grid-2 gap-6">
+                        <div class="card card-secondary">
                             <h4 class="font-semibold mb-3">Programming</h4>
                             <ul class="space-y-2">
                                 <li class="flex items-center">
@@ -285,7 +263,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="bg-secondary p-4 rounded-lg">
+                        <div class="card card-secondary">
                             <h4 class="font-semibold mb-3">Languages</h4>
                             <ul class="space-y-2">
                                 <li class="flex items-center">
@@ -303,58 +281,50 @@
     </section>
 
     <!-- Publications Section -->
-    <section class="py-20 bg-secondary" id="publications">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-6 text-center">Selected Publications</h2>
+    <section class="section section-secondary" id="publications">
+        <div class="container">
+            <h2 class="section-title text-center">Selected Publications</h2>
             <p class="text-center mb-12 text-light">Highlighting representative research output from 32+ peer-reviewed publications</p>
             
             <div class="space-y-6">
-                <div class="bg-primary p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                    <div class="flex items-start">
-                        <div class="text-accent text-4xl font-bold mr-4">01</div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Integrated management of safety and security barriers in chemical plants to cope with emerging cyber-physical attack risks under uncertainties</h3>
-                            <p class="text-light mb-1">Yuan, S., Reniers, G., & Yang, M. (2024)</p>
-                            <p class="text-accent">Reliability Engineering & System Safety, 250, [110320]</p>
-                        </div>
+                <div class="publication-item">
+                    <div class="publication-number">01</div>
+                    <div>
+                        <h3 class="publication-title">Integrated management of safety and security barriers in chemical plants to cope with emerging cyber-physical attack risks under uncertainties</h3>
+                        <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2024)</p>
+                        <p class="publication-journal">Reliability Engineering & System Safety, 250, [110320]</p>
                     </div>
                 </div>
                 
-                <div class="bg-primary p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                    <div class="flex items-start">
-                        <div class="text-accent text-4xl font-bold mr-4">02</div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Integrated process safety and process security risk assessment of industrial cyber-physical systems in chemical plants</h3>
-                            <p class="text-light mb-1">Yuan, S., Yang, M., & Reniers, G. (2024)</p>
-                            <p class="text-accent">Computers in Industry, 155, [104056]</p>
-                        </div>
+                <div class="publication-item">
+                    <div class="publication-number">02</div>
+                    <div>
+                        <h3 class="publication-title">Integrated process safety and process security risk assessment of industrial cyber-physical systems in chemical plants</h3>
+                        <p class="publication-authors">Yuan, S., Yang, M., & Reniers, G. (2024)</p>
+                        <p class="publication-journal">Computers in Industry, 155, [104056]</p>
                     </div>
                 </div>
                 
-                <div class="bg-primary p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                    <div class="flex items-start">
-                        <div class="text-accent text-4xl font-bold mr-4">03</div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Cost-effective maintenance of safety and security barriers in the chemical process industries via genetic algorithm</h3>
-                            <p class="text-light mb-1">Yuan, S., Reniers, G., Yang, M., & Bai, Y. (2023)</p>
-                            <p class="text-accent">Process Safety and Environmental Protection, 170, 356-371</p>
-                        </div>
+                <div class="publication-item">
+                    <div class="publication-number">03</div>
+                    <div>
+                        <h3 class="publication-title">Cost-effective maintenance of safety and security barriers in the chemical process industries via genetic algorithm</h3>
+                        <p class="publication-authors">Yuan, S., Reniers, G., Yang, M., & Bai, Y. (2023)</p>
+                        <p class="publication-journal">Process Safety and Environmental Protection, 170, 356-371</p>
                     </div>
                 </div>
                 
-                <div class="bg-primary p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                    <div class="flex items-start">
-                        <div class="text-accent text-4xl font-bold mr-4">04</div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Dynamic-risk-informed safety barrier management: An application to cost-effective barrier optimization based on data from multiple sources</h3>
-                            <p class="text-light mb-1">Yuan, S., Reniers, G., & Yang, M. (2023)</p>
-                            <p class="text-accent">Journal of Loss Prevention in the Process Industries, 83, [105034]</p>
-                        </div>
+                <div class="publication-item">
+                    <div class="publication-number">04</div>
+                    <div>
+                        <h3 class="publication-title">Dynamic-risk-informed safety barrier management: An application to cost-effective barrier optimization based on data from multiple sources</h3>
+                        <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2023)</p>
+                        <p class="publication-journal">Journal of Loss Prevention in the Process Industries, 83, [105034]</p>
                     </div>
                 </div>
                 
                 <div class="text-center mt-8">
-                    <a href="#" class="inline-block text-accent border border-accent px-6 py-3 rounded hover:bg-accent hover:bg-opacity-10 transition-colors">
+                    <a href="#" class="btn btn-outline">
                         View Full Publication List
                     </a>
                 </div>
@@ -363,28 +333,28 @@
     </section>
 
     <!-- Awards & Editorial Work Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2 gap-12">
                 <div>
-                    <h2 class="text-3xl font-bold mb-8">Awards & Honors</h2>
+                    <h2 class="section-title">Awards & Honors</h2>
                     <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-award text-accent text-xl mr-3 mt-1"></i>
+                        <li class="award-item">
+                            <i class="fas fa-award award-icon"></i>
                             <div>
                                 <p class="font-semibold">Best Poster Award, 2nd Prize</p>
                                 <p class="text-light">17th EFCE International Symposium on Loss Prevention and Safety Promotion in Process Industries</p>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-award text-accent text-xl mr-3 mt-1"></i>
+                        <li class="award-item">
+                            <i class="fas fa-award award-icon"></i>
                             <div>
                                 <p class="font-semibold">First Prize of Excellent Graduation Thesis</p>
                                 <p class="text-light">University Level (CUMTB), 2017</p>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-award text-accent text-xl mr-3 mt-1"></i>
+                        <li class="award-item">
+                            <i class="fas fa-award award-icon"></i>
                             <div>
                                 <p class="font-semibold">First-Class MSc Scholarship (ranked 1/50)</p>
                                 <p class="text-light">University Level (CUMTB), 2019</p>
@@ -394,18 +364,18 @@
                 </div>
                 
                 <div>
-                    <h2 class="text-3xl font-bold mb-8">Editorial Work</h2>
-                    <h3 class="text-xl font-semibold mb-4 text-accent">Guest Editor</h3>
+                    <h2 class="section-title">Editorial Work</h2>
+                    <h3 class="subtitle text-accent">Guest Editor</h3>
                     <ul class="space-y-3 mb-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-book-open text-accent text-xl mr-3 mt-1"></i>
+                        <li class="award-item">
+                            <i class="fas fa-book-open award-icon"></i>
                             <div>
                                 <p class="font-semibold">Process Safety in the Era of AI: Opportunities and Challenges</p>
                                 <p class="text-light">Journal of Loss Prevention in the Process Industries, 2025-2026</p>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-book-open text-accent text-xl mr-3 mt-1"></i>
+                        <li class="award-item">
+                            <i class="fas fa-book-open award-icon"></i>
                             <div>
                                 <p class="font-semibold">Cyber–Physical Attacks and Their Impacts on the Safety of Industrial Control Systems</p>
                                 <p class="text-light">Safety - MDPI, 2025-2026</p>
@@ -413,14 +383,14 @@
                         </li>
                     </ul>
                     
-                    <h3 class="text-xl font-semibold mb-4 text-accent">Journal Reviewer</h3>
+                    <h3 class="subtitle text-accent">Journal Reviewer</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary px-3 py-1 rounded-full text-sm">Reliability Engineering & System Safety</span>
-                        <span class="bg-primary px-3 py-1 rounded-full text-sm">Safety Science</span>
-                        <span class="bg-primary px-3 py-1 rounded-full text-sm">Risk Analysis</span>
-                        <span class="bg-primary px-3 py-1 rounded-full text-sm">Expert Systems With Applications</span>
-                        <span class="bg-primary px-3 py-1 rounded-full text-sm">Journal of Loss Prevention</span>
-                        <span class="bg-primary px-3 py-1 rounded-full text-sm">And 15+ more journals</span>
+                        <span class="tag">Reliability Engineering & System Safety</span>
+                        <span class="tag">Safety Science</span>
+                        <span class="tag">Risk Analysis</span>
+                        <span class="tag">Expert Systems With Applications</span>
+                        <span class="tag">Journal of Loss Prevention</span>
+                        <span class="tag">And 15+ more journals</span>
                     </div>
                 </div>
             </div>
@@ -428,22 +398,22 @@
     </section>
 
     <!-- Patents & Copyright Section -->
-    <section class="py-20 bg-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Patents & Software Copyrights</h2>
+    <section class="section section-secondary">
+        <div class="container">
+            <h2 class="section-title text-center">Patents & Software Copyrights</h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid grid-2 gap-12">
                 <div>
-                    <h3 class="text-xl font-semibold mb-6 text-accent flex items-center">
+                    <h3 class="subtitle text-accent flex items-center">
                         <i class="fas fa-certificate mr-3"></i> Patents
                     </h3>
                     <div class="space-y-6">
-                        <div class="bg-primary p-4 rounded-lg shadow-lg">
+                        <div class="card">
                             <h4 class="font-semibold mb-2">A method for prediction, revision and leakage rate estimation of gas leakage in utility tunnels</h4>
                             <p class="text-light">Chinese Patent, Patent No. CN201810072744.2, China, 2021</p>
                             <p class="text-accent mt-2">Jiansong Wu, Shuaiqi Yuan, Can Zhang</p>
                         </div>
-                        <div class="bg-primary p-4 rounded-lg shadow-lg">
+                        <div class="card">
                             <h4 class="font-semibold mb-2">An urban accident disaster evolution simulation and risk prediction and early warning method</h4>
                             <p class="text-light">Chinese Patent, Patent No. CN202010640242.2, China, 2021</p>
                             <p class="text-accent mt-2">Jiansong Wu, Xiaofeng Hu, Shuaiqi Yuan, Bing Shen, Jitao Cai</p>
@@ -452,16 +422,16 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-semibold mb-6 text-accent flex items-center">
+                    <h3 class="subtitle text-accent flex items-center">
                         <i class="fas fa-laptop-code mr-3"></i> Software Copyrights
                     </h3>
                     <div class="space-y-6">
-                        <div class="bg-primary p-4 rounded-lg shadow-lg">
+                        <div class="card">
                             <h4 class="font-semibold mb-2">Software for Prediction of Gas Leakage and Dispersion in Coal Mine Roadways</h4>
                             <p class="text-light">Registration Number: 2018SR687198. (Registered in China)</p>
                             <p class="text-accent mt-2">Shuaiqi Yuan, Jiansong Wu</p>
                         </div>
-                        <div class="bg-primary p-4 rounded-lg shadow-lg">
+                        <div class="card">
                             <h4 class="font-semibold mb-2">Software for Predicting Gas Leakage and Dispersion in Utility Tunnels Based on Data Assimilation Method</h4>
                             <p class="text-light">Registration Number: 2018SR687202. (Registered in China)</p>
                             <p class="text-accent mt-2">Shuaiqi Yuan, Jiansong Wu</p>
@@ -473,31 +443,31 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20" id="contact">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Contact Me</h2>
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Me</h2>
             
-            <div class="max-w-3xl mx-auto bg-secondary p-8 rounded-lg shadow-xl">
-                <div class="grid md:grid-cols-2 gap-8">
+            <div class="contact-section">
+                <div class="grid grid-2 gap-8">
                     <div>
-                        <h3 class="text-xl font-semibold mb-6 text-accent">Get In Touch</h3>
+                        <h3 class="subtitle text-accent">Get In Touch</h3>
                         <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-envelope text-accent text-xl mr-3 mt-1"></i>
+                            <li class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
                                 <div>
                                     <p class="font-semibold">Email</p>
                                     <p class="text-light">shuaiqi.yuan@polyu.edu.hk</p>
                                 </div>
                             </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-phone text-accent text-xl mr-3 mt-1"></i>
+                            <li class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
                                 <div>
                                     <p class="font-semibold">Phone</p>
                                     <p class="text-light">+86 13126820171</p>
                                 </div>
                             </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-accent text-xl mr-3 mt-1"></i>
+                            <li class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
                                 <div>
                                     <p class="font-semibold">Address</p>
                                     <p class="text-light">Department of Industrial and Systems Engineering,<br>The Hong Kong Polytechnic University,<br>Hong Kong, Special Administrative Region of China</p>
@@ -505,35 +475,35 @@
                             </li>
                         </ul>
                         
-                        <div class="mt-8 flex space-x-4">
-                            <a href="#" class="text-accent hover:text-white transition-colors">
-                                <i class="fab fa-linkedin text-2xl"></i>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="#" class="text-accent hover:text-white transition-colors">
-                                <i class="fab fa-researchgate text-2xl"></i>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-researchgate"></i>
                             </a>
-                            <a href="#" class="text-accent hover:text-white transition-colors">
-                                <i class="fab fa-github text-2xl"></i>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="text-accent hover:text-white transition-colors">
-                                <i class="fas fa-graduation-cap text-2xl"></i>
+                            <a href="#" class="social-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </a>
                         </div>
                     </div>
                     
                     <div>
-                        <h3 class="text-xl font-semibold mb-6 text-accent">Send Me a Message</h3>
+                        <h3 class="subtitle text-accent">Send Me a Message</h3>
                         <form>
-                            <div class="mb-4">
-                                <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-primary border border-gray-700 focus:border-accent focus:outline-none">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" class="form-control">
                             </div>
-                            <div class="mb-4">
-                                <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-primary border border-gray-700 focus:border-accent focus:outline-none">
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" class="form-control">
                             </div>
-                            <div class="mb-4">
-                                <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-primary border border-gray-700 focus:border-accent focus:outline-none"></textarea>
+                            <div class="form-group">
+                                <textarea placeholder="Your Message" rows="4" class="form-control"></textarea>
                             </div>
-                            <button type="submit" class="bg-accent text-primary px-6 py-2 rounded hover:bg-opacity-90 transition-colors">
+                            <button type="submit" class="btn btn-primary">
                                 Send Message
                             </button>
                         </form>
@@ -544,11 +514,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary border-t border-gray-800 py-8">
-        <div class="container mx-auto px-6">
+    <footer>
+        <div class="container">
             <div class="text-center">
-                <p class="text-light mb-4">© 2025 Dr. Yuan Shuaiqi. All Rights Reserved.</p>
-                <p class="text-xs text-gray-500">Last Updated: April 15, 2025</p>
+                <p class="footer-text">© 2025 Dr. Yuan Shuaiqi. All Rights Reserved.</p>
+                <p class="footer-copyright">Last Updated: April 15, 2025</p>
             </div>
         </div>
     </footer>
@@ -559,14 +529,14 @@
         const mobileMenu = document.getElementById('mobile-menu');
         
         menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('active');
         });
         
         // Close mobile menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('active');
             });
         });
         
