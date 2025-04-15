@@ -2,13 +2,13 @@
 ```css
 /* styles.css */
 /* Base styling and color variables */
-:root {
-  --primary: #0a192f;
-  --secondary: #112240;
-  --accent: #64ffda;
-  --text: #ccd6f6;
-  --light: #8892b0;
-}
+:root {  
+  --primary: #0a192f;  
+  --secondary: #112240;  
+  --accent: #64ffda;  
+  --text: #ccd6f6;  
+  --light: #8892b0;  
+}  
 
 /* Reset and base styles */
 * {
@@ -192,14 +192,26 @@ nav .container {
   align-items: center;
 }
 
-.profile-image {
-  position: relative;
-  width: 16rem;
-  height: 16rem;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 4px solid var(--accent);
-  margin-bottom: 2rem;
+.profile-image {  
+  position: relative;  
+  width: 16rem;  
+  height: 16rem;  
+  overflow: hidden;  
+  border-radius: 50%;  
+  border: 4px solid var(--accent);  
+  margin-bottom: 2rem;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+}  
+
+.profile-image img {  
+  min-width: 100%;  
+  min-height: 100%;  
+  width: auto;  
+  height: auto;  
+  max-width: 150%; /* Allows image to be zoomed out more */  
+  object-fit: cover;  
 }
 
 .profile-placeholder {
