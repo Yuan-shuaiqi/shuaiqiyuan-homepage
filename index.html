@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="styles.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
     <style>
-        /* Custom styles for ClusterMaps positioning and contact layout */
+        /* FIXED: Remove background from contact section and improve ClusterMaps positioning */
+        .contact-section {
+            padding: 2rem 0;
+            /* REMOVED: background-color, border-radius, box-shadow */
+        }
+        
         .contact-layout {
             display: flex;
             align-items: flex-start;
-            gap: 3rem;
+            gap: 4rem;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -20,24 +25,34 @@
         .contact-info {
             flex: 1;
             min-width: 400px;
+            /* REMOVED: background styling */
         }
         
         .clustrmaps-container {
-            flex: 0 0 300px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 20px;
-            min-height: 280px;
-        }
-        
-        /* ClusterMaps widget styling */
-        .clustrmaps-widget {
-            width: 100%;
-            height: 280px;
+            flex: 0 0 250px;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 250px;
+            /* FIXED: Better positioning */
+            margin-left: auto;
+        }
+        
+        /* ClusterMaps widget styling - FIXED positioning */
+        .clustrmaps-widget {
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        /* Ensure ClusterMaps elements are properly centered */
+        .clustrmaps-widget canvas,
+        .clustrmaps-widget iframe {
+            margin: 0 auto !important;
+            display: block !important;
         }
         
         /* Style the ClusterMaps when it loads */
@@ -49,8 +64,8 @@
         
         /* Fallback styling */
         .clustrmaps-loading {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             border: 2px dashed var(--accent);
             border-radius: 50%;
             display: flex;
@@ -59,6 +74,14 @@
             color: var(--light);
             font-size: 0.9rem;
             text-align: center;
+        }
+        
+        /* FIXED: Override any contact-section background from main CSS */
+        #contact .contact-section {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            padding: 2rem 0 !important;
         }
         
         /* Responsive design for mobile */
@@ -78,12 +101,13 @@
                 flex: none;
                 width: 100%;
                 justify-content: center;
+                margin-left: 0;
             }
-        }
-        
-        /* Additional styling for better layout */
-        .contact-section {
-            padding: 2rem 0;
+            
+            .clustrmaps-widget {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>  
@@ -555,7 +579,7 @@
                 
                 <div class="contact-section">  
                     <div class="contact-layout">  
-                        <!-- Contact Information - Left Side -->
+                        <!-- Contact Information - Left Side (NO BACKGROUND BOX) -->
                         <div class="contact-info">  
                             <h3 class="subtitle text-accent">Get In Touch</h3>  
                             <ul class="space-y-4">  
@@ -598,7 +622,7 @@
                             </div>  
                         </div>  
                         
-                        <!-- ClusterMaps Globe - Right Side -->
+                        <!-- ClusterMaps Globe - Right Side (FIXED POSITIONING) -->
                         <div class="clustrmaps-container">
                             <div class="clustrmaps-widget" id="clustrmaps-widget">
                                 <div class="clustrmaps-loading" id="clustrmaps-loading">
@@ -658,7 +682,7 @@
                 });  
             });  
             
-            // ClusterMaps Loading
+            // ClusterMaps Loading - FIXED
             function loadClusterMaps() {
                 console.log('Loading ClusterMaps...');
                 
@@ -671,52 +695,34 @@
                 // Success handler
                 script.onload = function() {
                     console.log('ClusterMaps loaded successfully');
-                    // Hide loading message
                     const loading = document.getElementById('clustrmaps-loading');
                     if (loading) {
                         loading.style.display = 'none';
                     }
                 };
                 
-                // Error handler
+                // Error handler with better fallback
                 script.onerror = function() {
                     console.error('Failed to load ClusterMaps');
+                    const widget = document.getElementById('clustrmaps-widget');
                     const loading = document.getElementById('clustrmaps-loading');
-                    if (loading) {
-                        loading.innerHTML = `
-                            <div style="color: #ff6b6b;">
-                                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
-                                Map temporarily<br>unavailable
+                    
+                    if (widget && loading) {
+                        // Replace with a static visitor counter image
+                        widget.innerHTML = `
+                            <div style="width: 200px; height: 200px; border-radius: 8px; background: linear-gradient(45deg, #0a192f, #112240); display: flex; align-items: center; justify-content: center; flex-direction: column; border: 1px solid var(--accent);">
+                                <i class="fas fa-globe" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                                <div style="text-align: center; color: var(--light); font-size: 0.9rem;">
+                                    <div style="color: var(--accent); font-weight: bold;">Visitor Globe</div>
+                                    <div>Temporarily Unavailable</div>
+                                </div>
                             </div>
                         `;
                     }
                 };
                 
-                // Alternative: Try to append to body first, then move
+                // Append to body
                 document.body.appendChild(script);
-                
-                // Also try direct embedding as fallback
-                setTimeout(() => {
-                    if (!document.querySelector('#clstr_globe')) {
-                        console.log('Trying alternative ClusterMaps loading method...');
-                        const widget = document.getElementById('clustrmaps-widget');
-                        if (widget) {
-                            // Create iframe as fallback
-                            const iframe = document.createElement('iframe');
-                            iframe.src = 'https://clustrmaps.com/map_v2.png?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s&cl=ffffff';
-                            iframe.width = '250';
-                            iframe.height = '250';
-                            iframe.style.border = 'none';
-                            iframe.style.borderRadius = '8px';
-                            
-                            const loading = document.getElementById('clustrmaps-loading');
-                            if (loading) {
-                                loading.style.display = 'none';
-                            }
-                            widget.appendChild(iframe);
-                        }
-                    }
-                }, 3000);
             }
             
             // Load ClusterMaps after page is ready
