@@ -23,22 +23,42 @@
         }
         
         .clustrmaps-container {
-            flex: 0 0 280px;
+            flex: 0 0 300px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             padding-top: 20px;
+            min-height: 280px;
         }
         
-        /* Ensure ClusterMaps globe is properly sized */
-        #clustrmaps-widget {
-            transform: scale(0.75);
-            transform-origin: center top;
+        /* ClusterMaps widget styling */
+        .clustrmaps-widget {
+            width: 100%;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        #clustrmaps-widget iframe {
-            max-width: 250px !important;
-            max-height: 250px !important;
+        /* Style the ClusterMaps when it loads */
+        .clustrmaps-widget iframe,
+        .clustrmaps-widget canvas {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(100, 255, 218, 0.1);
+        }
+        
+        /* Fallback styling */
+        .clustrmaps-loading {
+            width: 250px;
+            height: 250px;
+            border: 2px dashed var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 0.9rem;
+            text-align: center;
         }
         
         /* Responsive design for mobile */
@@ -58,10 +78,6 @@
                 flex: none;
                 width: 100%;
                 justify-content: center;
-            }
-            
-            #clustrmaps-widget {
-                transform: scale(0.6);
             }
         }
         
@@ -584,8 +600,13 @@
                         
                         <!-- ClusterMaps Globe - Right Side -->
                         <div class="clustrmaps-container">
-                            <div id="clustrmaps-widget">
-                                <!-- ClusterMaps will be loaded here -->
+                            <div class="clustrmaps-widget" id="clustrmaps-widget">
+                                <div class="clustrmaps-loading" id="clustrmaps-loading">
+                                    <div>
+                                        <i class="fas fa-globe" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                        Visitor Map<br>Loading...
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>  
@@ -637,32 +658,77 @@
                 });  
             });  
             
-            // Load ClusterMaps script after DOM is ready
+            // ClusterMaps Loading
             function loadClusterMaps() {
-                // Create the script element
+                console.log('Loading ClusterMaps...');
+                
+                // Create script element
                 const script = document.createElement('script');
                 script.type = 'text/javascript';
                 script.id = 'clstr_globe';
-                script.src = '//clustrmaps.com/globe.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s';
+                script.src = 'https://clustrmaps.com/globe.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s';
                 
-                // Add error handling
-                script.onerror = function() {
-                    console.log('ClusterMaps failed to load');
-                    // Optionally add a fallback or placeholder
-                    document.getElementById('clustrmaps-widget').innerHTML = '<p style="text-align: center; color: #666;">Visitor Map Loading...</p>';
+                // Success handler
+                script.onload = function() {
+                    console.log('ClusterMaps loaded successfully');
+                    // Hide loading message
+                    const loading = document.getElementById('clustrmaps-loading');
+                    if (loading) {
+                        loading.style.display = 'none';
+                    }
                 };
                 
-                // Append to the clustrmaps-widget div
-                document.getElementById('clustrmaps-widget').appendChild(script);
+                // Error handler
+                script.onerror = function() {
+                    console.error('Failed to load ClusterMaps');
+                    const loading = document.getElementById('clustrmaps-loading');
+                    if (loading) {
+                        loading.innerHTML = `
+                            <div style="color: #ff6b6b;">
+                                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                Map temporarily<br>unavailable
+                            </div>
+                        `;
+                    }
+                };
+                
+                // Alternative: Try to append to body first, then move
+                document.body.appendChild(script);
+                
+                // Also try direct embedding as fallback
+                setTimeout(() => {
+                    if (!document.querySelector('#clstr_globe')) {
+                        console.log('Trying alternative ClusterMaps loading method...');
+                        const widget = document.getElementById('clustrmaps-widget');
+                        if (widget) {
+                            // Create iframe as fallback
+                            const iframe = document.createElement('iframe');
+                            iframe.src = 'https://clustrmaps.com/map_v2.png?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s&cl=ffffff';
+                            iframe.width = '250';
+                            iframe.height = '250';
+                            iframe.style.border = 'none';
+                            iframe.style.borderRadius = '8px';
+                            
+                            const loading = document.getElementById('clustrmaps-loading');
+                            if (loading) {
+                                loading.style.display = 'none';
+                            }
+                            widget.appendChild(iframe);
+                        }
+                    }
+                }, 3000);
             }
             
-            // Load ClusterMaps when DOM is ready
+            // Load ClusterMaps after page is ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', loadClusterMaps);
             } else {
                 loadClusterMaps();
             }
         </script>  
+        
+        <!-- Direct ClusterMaps Integration - Alternative Method -->
+        <script type="text/javascript" id="clstr_globe_direct" src="https://clustrmaps.com/globe.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s"></script>
 
 </body>  
 </html>
