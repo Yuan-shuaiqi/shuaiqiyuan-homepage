@@ -8,59 +8,64 @@
     <link rel="stylesheet" href="styles.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
     <style>
-        /* OPTIMIZED ClusterMaps - Floating Corner Approach */
+        /* SIMPLE CENTERED LAYOUT for Contact Section */
         .contact-section {
             padding: 2rem 0;
             background-color: transparent !important;
             box-shadow: none !important;
             border-radius: 0 !important;
-            position: relative;
         }
         
         .contact-layout {
-            display: block; /* Changed from flex to block */
-            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
             margin: 0 auto;
-            position: relative;
+            text-align: center;
         }
         
         .contact-info {
             width: 100%;
-            max-width: none;
+            margin-bottom: 2rem;
         }
         
-        /* FLOATING ClusterMaps in top-right corner */
+        .contact-info h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info ul {
+            text-align: left;
+            display: inline-block;
+        }
+        
+        /* SIMPLE ClusterMaps container below contact info */
         .clustrmaps-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60px !important;
-            height: 60px !important;
-            max-width: 60px !important;
-            max-height: 60px !important;
-            overflow: hidden !important;
-            border-radius: 50%;
-            border: 2px solid rgba(100, 255, 218, 0.3);
+            width: 200px;
+            height: 200px;
+            max-width: 200px;
+            max-height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 255, 218, 0.3);
             background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
-            z-index: 10;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* TINY ClusterMaps widget */
-        .clustrmaps-widget {
-            width: 60px !important;
-            height: 60px !important;
-            max-width: 60px !important;
-            max-height: 60px !important;
-            overflow: hidden !important;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            margin: 0 auto;
         }
         
-        /* FORCE all ClusterMaps elements to be tiny */
+        /* Force ClusterMaps to stay within bounds */
+        .clustrmaps-widget {
+            width: 200px !important;
+            max-width: 200px !important;
+            height: 200px !important;
+            max-height: 200px !important;
+            overflow: hidden !important;
+        }
+        
+        /* Target all ClusterMaps elements */
         .clustrmaps-widget *,
         .clustrmaps-widget img,
         .clustrmaps-widget iframe,
@@ -71,18 +76,8 @@
         #clustrmaps iframe,
         #clustrmaps div,
         #clustrmaps canvas {
-            max-width: 60px !important;
-            max-height: 60px !important;
-            width: 60px !important;
-            height: 60px !important;
-            border-radius: 50%;
-            transform: scale(0.6) !important;
-            transform-origin: center center !important;
-        }
-        
-        /* Add some padding to contact info to avoid overlap */
-        .contact-info {
-            padding-right: 80px; /* Space for floating ClusterMaps */
+            max-width: 200px !important;
+            max-height: 200px !important;
         }
         
         /* Override any contact-section background from main CSS */
@@ -93,35 +88,33 @@
             padding: 2rem 0 !important;
         }
         
-        /* Responsive design for mobile */
+        /* Center social links */
+        .social-links {
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .contact-info {
-                padding-right: 0;
-            }
-            
             .clustrmaps-container {
-                position: static;
-                margin: 1rem auto 0 auto;
-                display: block;
+                width: 150px;
+                height: 150px;
+                max-width: 150px;
+                max-height: 150px;
             }
             
-            .contact-layout {
-                text-align: center;
+            .clustrmaps-widget {
+                width: 150px !important;
+                max-width: 150px !important;
+                height: 150px !important;
+                max-height: 150px !important;
             }
-        }
-        
-        /* Additional fallback */
-        [id*="clustrmaps"] {
-            max-width: 60px !important;
-            max-height: 60px !important;
-            border-radius: 50% !important;
-        }
-        
-        /* Hover effect for ClusterMaps */
-        .clustrmaps-container:hover {
-            transform: scale(1.1);
-            transition: transform 0.2s ease;
-            border-color: var(--accent);
+            
+            .clustrmaps-widget *,
+            #clustrmaps * {
+                max-width: 150px !important;
+                max-height: 150px !important;
+            }
         }
     </style>
 </head>  
@@ -586,21 +579,14 @@
             </div>  
         </section>  
 
-        <!-- Contact Section with FLOATING ClusterMaps -->
+        <!-- Contact Section - CENTERED WITH CLUSTERMAP BELOW -->
         <section class="section" id="contact">  
             <div class="container">  
                 <h2 class="section-title text-center">Contact Me</h2>  
                 
                 <div class="contact-section">  
                     <div class="contact-layout">  
-                        <!-- FLOATING ClusterMaps - Top Right Corner -->
-                        <div class="clustrmaps-container">
-                            <div class="clustrmaps-widget" id="clustrmaps-widget">
-                                <!-- ClusterMaps will load here -->
-                            </div>
-                        </div>
-                        
-                        <!-- Contact Information -->
+                        <!-- Contact Information - CENTERED -->
                         <div class="contact-info">  
                             <h3 class="subtitle text-accent">Get In Touch</h3>  
                             <ul class="space-y-4">  
@@ -642,6 +628,13 @@
                                 </a>  
                             </div>  
                         </div>  
+                        
+                        <!-- ClusterMaps - BELOW Contact Info -->
+                        <div class="clustrmaps-container">
+                            <div class="clustrmaps-widget" id="clustrmaps-widget">
+                                <!-- ClusterMaps will load here -->
+                            </div>
+                        </div>
                     </div>  
                 </div>  
             </div>  
@@ -692,8 +685,8 @@
             });  
         </script>  
         
-        <!-- ClusterMaps v2 Script - Floating Corner Version -->
-        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s&cl=ffffff&w=a"></script>
+        <!-- ClusterMaps - Your Specific Code with Smaller Size -->
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=n&d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
 
 </body>  
 </html>
