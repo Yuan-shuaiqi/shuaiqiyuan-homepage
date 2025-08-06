@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
     <style>
-        /* FIXED CONTAINED ClusterMaps */
+        /* UPDATED Contact Section Styles - Removed container-specific CSS */
         .contact-section {
             padding: 2rem 0;
             background-color: transparent !important;
@@ -30,58 +30,9 @@
             margin-bottom: 2rem;
         }
         
-        .contact-info h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
         .contact-info ul {
             text-align: left;
             display: inline-block;
-        }
-        
-        /* FIXED Container for ClusterMaps - Strict Containment */
-        .clustrmaps-container {
-            width: 200px !important;
-            height: 200px !important;
-            max-width: 200px !important;
-            max-height: 200px !important;
-            overflow: hidden !important;
-            border-radius: 8px;
-            border: 1px solid rgba(100, 255, 218, 0.3);
-            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem auto; /* Added bottom margin to separate from footer */
-            position: relative;
-        }
-        
-        /* Force containment of generated elements */
-        .clustrmaps-container > div,
-        .clustrmaps-container > img,
-        .clustrmaps-container > iframe {
-            width: 100% !important;
-            height: 100% !important;
-            max-width: 200px !important;
-            max-height: 200px !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
-        }
-        
-        /* Target ClusterMaps specific classes if needed */
-        .clustrmaps-widget {
-            width: 200px !important;
-            height: 200px !important;
-            overflow: hidden !important;
-        }
-        
-        /* Nuclear containment for any child elements */
-        .clustrmaps-container * {
-            max-width: 200px !important;
-            max-height: 200px !important;
-            overflow: hidden !important;
         }
         
         /* Override any contact-section background from main CSS */
@@ -96,21 +47,7 @@
         .social-links {
             justify-content: center;
             margin-top: 2rem;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .clustrmaps-container {
-                width: 150px !important;
-                height: 150px !important;
-                max-width: 150px !important;
-                max-height: 150px !important;
-            }
-            
-            .clustrmaps-container * {
-                max-width: 150px !important;
-                max-height: 150px !important;
-            }
+            margin-bottom: 2rem; /* Added space before ClusterMaps */
         }
     </style>
 </head>  
@@ -336,4 +273,16 @@
                             </a>  
                         </h3>  
                         <p class="publication-authors">Yuan, S., Yang, M., & Reniers, G. (2024)</p>  
-                        <p class="publication-journal">Computers in Industry, 155, [104056]</p
+                        <p class="publication-journal">Computers in Industry, 155, [104056]</p>  
+                    </div>  
+                </div>  
+
+                <div class="publication-item">  
+                    <div class="publication-number">04</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0950423025000907" target="_blank" class="hover:text-accent">  
+                               Dynamic and integrated safety and security barrier management: A new framework to manage major event risks in chemical plants  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M.
