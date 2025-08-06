@@ -7,6 +7,69 @@
     <title>Dr. Yuan Shuaiqi | Academic Portfolio</title>  
     <link rel="stylesheet" href="styles.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+    <style>
+        /* Custom styles for ClusterMaps positioning and contact layout */
+        .contact-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 400px;
+        }
+        
+        .clustrmaps-container {
+            flex: 0 0 280px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 20px;
+        }
+        
+        /* Ensure ClusterMaps globe is properly sized */
+        #clustrmaps-widget {
+            transform: scale(0.75);
+            transform-origin: center top;
+        }
+        
+        #clustrmaps-widget iframe {
+            max-width: 250px !important;
+            max-height: 250px !important;
+        }
+        
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            .contact-layout {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+            }
+            
+            .contact-info {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .clustrmaps-container {
+                flex: none;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            #clustrmaps-widget {
+                transform: scale(0.6);
+            }
+        }
+        
+        /* Additional styling for better layout */
+        .contact-section {
+            padding: 2rem 0;
+        }
+    </style>
 </head>  
 <body>  
     <!-- Navigation -->  
@@ -134,7 +197,7 @@
                     <div class="card">  
                         <div class="flex justify-between mb-4">  
                             <h3 class="card-title">Research Assistant</h3>  
-                            <span class="text-accent">Apr 2021-Oct 2021</span>  
+                            <span class="text-accent">Jul 2021-Mar 2022</span>  
                         </div>  
                         <p class="card-subtitle">Safety and Security Science Group, TU Delft, The Netherlands</p>  
                         <p class="mb-2">Project: <span class="text-accent">"Collaboration on Safety - Instrument (COSI)"</span></p>  
@@ -188,392 +251,418 @@
         </div>  
     </section>  
 
- <!-- Publications Section -->  
-<section class="section section-secondary" id="publications">  
-    <div class="container">  
-        <h2 class="section-title text-center">Selected Publications</h2>  
-        <p class="text-center mb-12 text-light">Highlighting representative research output from 32+ peer-reviewed publications</p>  
-        <div class="space-y-6">  
-            
-            <div class="publication-item">  
-                <div class="publication-number">01</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://rpsonline.com.sg/proceedings/esrel-sra-e2025/pdf/ESREL-SRA-E2025-P4806.pdf" target="_blank" class="hover:text-accent">  
-                            Trustworthy Anomaly Detection for Industrial Control Systems via Conformal Deep Autoencoder
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., & Zhang, X. (2025)</p>  
-                    <p class="publication-journal">Proceedings of the 35th European Safety and Reliability Conference (ESREL2025) and the 33rd Society for Risk Analysis Europe Conference (SRA-E 2025) 15 – 19 June 2025, Stavanger, Norway</p>  
-                </div>  
-            </div>
-            
-            <div class="publication-item">  
-                <div class="publication-number">02</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0951832024003922" target="_blank" class="hover:text-accent">  
-                            Integrated management of safety and security barriers in chemical plants to cope with emerging cyber-physical attack risks under uncertainties  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2024)</p>  
-                    <p class="publication-journal">Reliability Engineering & System Safety, 250, [110320]</p>  
-                </div>  
-            </div>  
-            
-            <div class="publication-item">  
-                <div class="publication-number">03</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0166361523002063" target="_blank" class="hover:text-accent">  
-                            Integrated process safety and process security risk assessment of industrial cyber-physical systems in chemical plants  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Yang, M., & Reniers, G. (2024)</p>  
-                    <p class="publication-journal">Computers in Industry, 155, [104056]</p>  
-                </div>  
-            </div>  
-
-            <div class="publication-item">  
-                <div class="publication-number">04</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0950423025000907" target="_blank" class="hover:text-accent">  
-                           Dynamic and integrated safety and security barrier management: A new framework to manage major event risks in chemical plants  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2025)</p>  
-                    <p class="publication-journal">Journal of Loss Prevention in the Process Industries, 96, [105632]</p>  
-                </div>  
-            </div>             
-           
-            <div class="publication-item">  
-                <div class="publication-number">05</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0957582022010710" target="_blank" class="hover:text-accent">  
-                            Cost-effective maintenance of safety and security barriers in the chemical process industries via genetic algorithm  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Reniers, G., Yang, M., & Bai, Y. (2023)</p>  
-                    <p class="publication-journal">Process Safety and Environmental Protection, 170, 356-371</p>  
-                </div>  
-            </div>  
-            
-            <div class="publication-item">  
-                <div class="publication-number">06</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/pii/S095183202200343X" target="_blank" class="hover:text-accent">  
-                            Safety barrier performance assessment by integrating computational fluid dynamics and evacuation modeling for toxic gas leakage scenarios  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Cai, J., Reniers, G., Yang, M., Chen, C., & Wu, J. (2022)</p>  
-                    <p class="publication-journal">Reliability Engineering and System Safety, 226, [108719]</p>  
-                </div>  
-            </div>  
-
-            <div class="publication-item">  
-                <div class="publication-number">07</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0950423023000645" target="_blank" class="hover:text-accent">  
-                            Dynamic-risk-informed safety barrier management: An application to cost-effective barrier optimization based on data from multiple sources  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2023)</p>  
-                    <p class="publication-journal">Journal of Loss Prevention in the Process Industries, 83, [105034]</p>  
-                </div>  
-            </div>   
-
-            <div class="publication-item">  
-                <div class="publication-number">08</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0925753521004872" target="_blank" class="hover:text-accent">  
-                            Safety barriers in the chemical process industries: A state-of-the-art review on their classification, assessment, and management   
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Yang, M., Reniers, G., Chen, C., & Wu, J. (2022)</p>  
-                    <p class="publication-journal">Safety Science, 148, [105647]</p>  
-                </div>  
-            </div>   
-            
-            <div class="publication-item">  
-                <div class="publication-number">09</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925753521001089" target="_blank" class="hover:text-accent">  
-                            CFD and EnKF coupling estimation of LNG leakage and dispersion  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Wu, J., Cai, J., Yuan, S*., Zhang, X., & Reniers, G. (2021)</p>  
-                    <p class="publication-journal">Safety Science, 139, [105263]</p>  
-                </div>  
-            </div>   
-            
-            <div class="publication-item">  
-                <div class="publication-number">10</div>  
-                <div>  
-                    <h3 class="publication-title">  
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950423019302888" target="_blank" class="hover:text-accent">  
-                            EnKF-based estimation of natural gas release and dispersion in an underground tunnel  
-                        </a>  
-                    </h3>  
-                    <p class="publication-authors">Yuan, S., Wu, J., Zhang, X., & Liu, W. (2019).</p>  
-                    <p class="publication-journal">Journal of Loss Prevention in the Process Industries, 62, [103931]</p>  
-                </div>  
-            </div>   
-            
-            <div class="text-center mt-8">  
-                <a href="https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en" target="_blank" class="btn btn-outline">  
-                    View Full Publication List  
-                </a>  
-            </div>  
-        </div>  
-    </div>  
-</section>  
-
-    <!-- Awards & Editorial Work Section -->  
-    <section class="section">  
+    <!-- Publications Section -->  
+    <section class="section section-secondary" id="publications">  
         <div class="container">  
-            <div class="grid grid-2 gap-12">  
-                <div>  
-                    <h2 class="section-title">Editorial Work</h2>  
-                    <h3 class="subtitle text-accent">Editorial Board Member</h3>  
-                    <ul class="space-y-3 mb-6"> 
-                        <li class="award-item">  
-                            <i class="fas fa-book-open award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">Young editorial board member of China Safety Science Journal, 2025 ~ current.</p>  
-                            </div>  
-                        </li>
-                    </ul>
-                    
-                    <h3 class="subtitle text-accent">Guest Editor</h3>  
-                    <ul class="space-y-3 mb-6">  
-                        <li class="award-item">  
-                            <i class="fas fa-book-open award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">SI: "Process Safety in the Era of AI: Opportunities and Challenges"</p>  
-                                <p class="text-light">Journal of Loss Prevention in the Process Industries, 2025-2026</p>  
-                            </div>  
-                        </li>  
-                        <li class="award-item">  
-                            <i class="fas fa-book-open award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">SI: "Cyber–Physical Attacks and Their Impacts on the Safety of Industrial Control Systems"</p>  
-                                <p class="text-light">Safety - MDPI, 2025</p>  
-                            </div>  
-                        </li>  
-                        <li class="award-item">  
-                            <i class="fas fa-book-open award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">SI: "Research Advances in Risk Assessment and Management of Fire Accidents Across Diverse Sectors"</p>  
-                                <p class="text-light">Fire - MDPI, 2025</p>  
-                            </div>  
-                        </li>  
-                    </ul>  
-                    
-                    <h3 class="subtitle text-accent">Journal Reviewer</h3>  
-                    <div class="flex flex-wrap gap-2">  
-                        <span class="tag">Reliability Engineering & System Safety</span>  
-                        <span class="tag">Safety Science</span>  
-                        <span class="tag">Risk Analysis</span>   
-                        <span class="tag">Journal of Loss Prevention in the Process Industries</span>
-                        <span class="tag">Expert Systems With Applications</span> 
-                        <span class="tag">International Journal of Hydrogen Energy</span>  
-                        <span class="tag">And 15+ more journals</span>  
+            <h2 class="section-title text-center">Selected Publications</h2>  
+            <p class="text-center mb-12 text-light">Highlighting representative research output from 32+ peer-reviewed publications</p>  
+            <div class="space-y-6">  
+                
+                <div class="publication-item">  
+                    <div class="publication-number">01</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://rpsonline.com.sg/proceedings/esrel-sra-e2025/pdf/ESREL-SRA-E2025-P4806.pdf" target="_blank" class="hover:text-accent">  
+                                Trustworthy Anomaly Detection for Industrial Control Systems via Conformal Deep Autoencoder
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., & Zhang, X. (2025)</p>  
+                        <p class="publication-journal">Proceedings of the 35th European Safety and Reliability Conference (ESREL2025) and the 33rd Society for Risk Analysis Europe Conference (SRA-E 2025) 15 – 19 June 2025, Stavanger, Norway</p>  
+                    </div>  
+                </div>
+                
+                <div class="publication-item">  
+                    <div class="publication-number">02</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0951832024003922" target="_blank" class="hover:text-accent">  
+                                Integrated management of safety and security barriers in chemical plants to cope with emerging cyber-physical attack risks under uncertainties  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2024)</p>  
+                        <p class="publication-journal">Reliability Engineering & System Safety, 250, [110320]</p>  
                     </div>  
                 </div>  
                 
-                <div>  
-                    <h2 class="section-title">Awards & Honors</h2>  
-                    <ul class="space-y-4">  
-                        <li class="award-item">  
-                            <i class="fas fa-award award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">
-                                    <a href="https://efce.info/Awards/Excellence+Awards_Young+Researcher+Awards/Excellence+Award+in+Process+Safety/Award+winners.html" target="_blank" class="hover:text-accent">
-                                        EFCE Excellence Award in Process Safety
-                                    </a>
-                                </p>  
-                                <p class="text-light">The award is granted every three years to a doctoral thesis, European Federation of Chemical Engineering, 2025</p>  
-                            </div>  
-                        </li> 
-                        <li class="award-item">  
-                            <i class="fas fa-award award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">CSC Postgraduate Scholarship</p>  
-                                <p class="text-light">China Scholarship Council, 2020~2024</p>  
-                            </div>  
-                        </li>  
-                        <li class="award-item">  
-                            <i class="fas fa-award award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">Best Poster Award, 2nd Prize</p>  
-                                <p class="text-light">17th EFCE International Symposium on Loss Prevention and Safety Promotion in Process Industries, 2022</p>  
-                            </div>  
-                        </li>  
-                        <li class="award-item">  
-                            <i class="fas fa-award award-icon"></i>  
-                            <div>  
-                                <p class="font-semibold">First Prize of Excellent Graduation Thesis</p>  
-                                <p class="text-light">University Level (CUMTB), 2017</p>  
-                            </div>  
-                        </li> 
-                    </ul>  
+                <div class="publication-item">  
+                    <div class="publication-number">03</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0166361523002063" target="_blank" class="hover:text-accent">  
+                                Integrated process safety and process security risk assessment of industrial cyber-physical systems in chemical plants  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Yang, M., & Reniers, G. (2024)</p>  
+                        <p class="publication-journal">Computers in Industry, 155, [104056]</p>  
+                    </div>  
+                </div>  
+
+                <div class="publication-item">  
+                    <div class="publication-number">04</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0950423025000907" target="_blank" class="hover:text-accent">  
+                               Dynamic and integrated safety and security barrier management: A new framework to manage major event risks in chemical plants  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2025)</p>  
+                        <p class="publication-journal">Journal of Loss Prevention in the Process Industries, 96, [105632]</p>  
+                    </div>  
+                </div>             
+               
+                <div class="publication-item">  
+                    <div class="publication-number">05</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0957582022010710" target="_blank" class="hover:text-accent">  
+                                Cost-effective maintenance of safety and security barriers in the chemical process industries via genetic algorithm  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Reniers, G., Yang, M., & Bai, Y. (2023)</p>  
+                        <p class="publication-journal">Process Safety and Environmental Protection, 170, 356-371</p>  
+                    </div>  
+                </div>  
+                
+                <div class="publication-item">  
+                    <div class="publication-number">06</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S095183202200343X" target="_blank" class="hover:text-accent">  
+                                Safety barrier performance assessment by integrating computational fluid dynamics and evacuation modeling for toxic gas leakage scenarios  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Cai, J., Reniers, G., Yang, M., Chen, C., & Wu, J. (2022)</p>  
+                        <p class="publication-journal">Reliability Engineering and System Safety, 226, [108719]</p>  
+                    </div>  
+                </div>  
+
+                <div class="publication-item">  
+                    <div class="publication-number">07</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0950423023000645" target="_blank" class="hover:text-accent">  
+                                Dynamic-risk-informed safety barrier management: An application to cost-effective barrier optimization based on data from multiple sources  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Reniers, G., & Yang, M. (2023)</p>  
+                        <p class="publication-journal">Journal of Loss Prevention in the Process Industries, 83, [105034]</p>  
+                    </div>  
+                </div>   
+
+                <div class="publication-item">  
+                    <div class="publication-number">08</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0925753521004872" target="_blank" class="hover:text-accent">  
+                                Safety barriers in the chemical process industries: A state-of-the-art review on their classification, assessment, and management   
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Yang, M., Reniers, G., Chen, C., & Wu, J. (2022)</p>  
+                        <p class="publication-journal">Safety Science, 148, [105647]</p>  
+                    </div>  
+                </div>   
+                
+                <div class="publication-item">  
+                    <div class="publication-number">09</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925753521001089" target="_blank" class="hover:text-accent">  
+                                CFD and EnKF coupling estimation of LNG leakage and dispersion  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Wu, J., Cai, J., Yuan, S*., Zhang, X., & Reniers, G. (2021)</p>  
+                        <p class="publication-journal">Safety Science, 139, [105263]</p>  
+                    </div>  
+                </div>   
+                
+                <div class="publication-item">  
+                    <div class="publication-number">10</div>  
+                    <div>  
+                        <h3 class="publication-title">  
+                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950423019302888" target="_blank" class="hover:text-accent">  
+                                EnKF-based estimation of natural gas release and dispersion in an underground tunnel  
+                            </a>  
+                        </h3>  
+                        <p class="publication-authors">Yuan, S., Wu, J., Zhang, X., & Liu, W. (2019).</p>  
+                        <p class="publication-journal">Journal of Loss Prevention in the Process Industries, 62, [103931]</p>  
+                    </div>  
+                </div>   
+                
+                <div class="text-center mt-8">  
+                    <a href="https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en" target="_blank" class="btn btn-outline">  
+                        View Full Publication List  
+                    </a>  
                 </div>  
             </div>  
         </div>  
     </section>  
 
-    <!-- Patents & Copyright Section -->  
-    <section class="section section-secondary">  
-        <div class="container">  
-            <h2 class="section-title text-center">Patents & Software Copyrights</h2>  
-            
-            <div class="grid grid-2 gap-12">  
-                <div>  
-                    <h3 class="subtitle text-accent">Patents <span class="text-light" style="font-weight:normal;">(Selected from more than 8 patents)</span></h3>  
-                    <div class="space-y-6">  
-                        <div class="card">  
-                            <h4 class="font-semibold mb-2">A method for prediction, revision and leakage rate estimation of gas leakage in utility tunnels</h4>  
-                            <p class="text-light">Chinese Patent, Patent No. CN201810072744.2, China, 2021</p>  
-                            <p class="text-accent mt-2">Jiansong Wu, Shuaiqi Yuan, Can Zhang</p>  
-                        </div>  
-                        <div class="card">  
-                            <h4 class="font-semibold mb-2">An urban accident disaster evolution simulation and risk prediction and early warning method</h4>  
-                            <p class="text-light">Chinese Patent, Patent No. CN202010640242.2, China, 2021</p>  
-                            <p class="text-accent mt-2">Jiansong Wu, Xiaofeng Hu, Shuaiqi Yuan, Bing Shen, Jitao Cai</p>  
-                        </div>  
-                    </div>  
-                </div>  
-                
-                <div>  
-                    <h3 class="subtitle text-accent">Software Copyrights <span class="text-light" style="font-weight:normal;">(Selected from more than 4 copyrights)</span></h3>  
-                    <div class="space-y-6">  
-                        <div class="card">  
-                            <h4 class="font-semibold mb-2">Software for Prediction of Gas Leakage and Dispersion in Coal Mine Roadways</h4>  
-                            <p class="text-light">Registration Number: 2018SR687198. (Registered in China)</p>  
-                            <p class="text-accent mt-2">Shuaiqi Yuan, Jiansong Wu</p>  
-                        </div>  
-                        <div class="card">  
-                            <h4 class="font-semibold mb-2">Software for Predicting Gas Leakage and Dispersion in Utility Tunnels Based on Data Assimilation Method</h4>  
-                            <p class="text-light">Registration Number: 2018SR687202. (Registered in China)</p>  
-                            <p class="text-accent mt-2">Shuaiqi Yuan, Jiansong Wu</p>  
-                        </div>  
-                    </div>  
-                </div>  
-            </div>  
-        </div>  
-    </section>  
-
-    <!-- Contact Section -->  
-    <section class="section" id="contact">  
-        <div class="container">  
-            <h2 class="section-title text-center">Contact Me</h2>  
-            
-            <div class="contact-section">  
-                <div style="display: flex; align-items: flex-start; gap: 3rem; max-width: 900px; margin: 0 auto;">  
-                    <!-- Contact Information - Left Side -->
-                    <div style="flex: 1; min-width: 400px;">  
-                        <h3 class="subtitle text-accent">Get In Touch</h3>  
-                        <ul class="space-y-4">  
-                            <li class="contact-item">  
-                                <i class="fas fa-envelope contact-icon"></i>  
+        <!-- Awards & Editorial Work Section -->  
+        <section class="section">  
+            <div class="container">  
+                <div class="grid grid-2 gap-12">  
+                    <div>  
+                        <h2 class="section-title">Editorial Work</h2>  
+                        <h3 class="subtitle text-accent">Editorial Board Member</h3>  
+                        <ul class="space-y-3 mb-6"> 
+                            <li class="award-item">  
+                                <i class="fas fa-book-open award-icon"></i>  
                                 <div>  
-                                    <p class="font-semibold">Email</p>  
-                                    <p class="text-light">shuaiqi.yuan@polyu.edu.hk</p>  
+                                    <p class="font-semibold">Young editorial board member of China Safety Science Journal, 2025 ~ current.</p>  
+                                </div>  
+                            </li>
+                        </ul>
+                        
+                        <h3 class="subtitle text-accent">Guest Editor</h3>  
+                        <ul class="space-y-3 mb-6">  
+                            <li class="award-item">  
+                                <i class="fas fa-book-open award-icon"></i>  
+                                <div>  
+                                    <p class="font-semibold">SI: "Process Safety in the Era of AI: Opportunities and Challenges"</p>  
+                                    <p class="text-light">Journal of Loss Prevention in the Process Industries, 2025-2026</p>  
                                 </div>  
                             </li>  
-                            <li class="contact-item">  
-                                <i class="fas fa-phone contact-icon"></i>  
+                            <li class="award-item">  
+                                <i class="fas fa-book-open award-icon"></i>  
                                 <div>  
-                                    <p class="font-semibold">Phone</p>  
-                                    <p class="text-light">+86 13126820171</p>  
+                                    <p class="font-semibold">SI: "Cyber–Physical Attacks and Their Impacts on the Safety of Industrial Control Systems"</p>  
+                                    <p class="text-light">Safety - MDPI, 2025</p>  
                                 </div>  
                             </li>  
-                            <li class="contact-item">  
-                                <i class="fas fa-map-marker-alt contact-icon"></i>  
+                            <li class="award-item">  
+                                <i class="fas fa-book-open award-icon"></i>  
                                 <div>  
-                                    <p class="font-semibold">Address</p>  
-                                    <p class="text-light">Department of Industrial and Systems Engineering,<br>The Hong Kong Polytechnic University,<br>Hong Kong, Special Administrative Region of China</p>  
+                                    <p class="font-semibold">SI: "Research Advances in Risk Assessment and Management of Fire Accidents Across Diverse Sectors"</p>  
+                                    <p class="text-light">Fire - MDPI, 2025</p>  
                                 </div>  
                             </li>  
                         </ul>  
                         
-                        <div class="social-links">  
-                            <a href="https://www.linkedin.cn/incareer/in/shuaiqi-yuan-51712223b" class="social-icon">  
-                                <i class="fab fa-linkedin"></i>  
-                            </a>  
-                            <a href="https://www.researchgate.net/profile/Shuaiqi-Yuan?ev=hdr_xprf" class="social-icon">  
-                                <i class="fab fa-researchgate"></i>  
-                            </a>  
-                            <a href="#" class="social-icon">  
-                                <i class="fab fa-github"></i>  
-                            </a>  
-                            <a href="https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en" class="social-icon">  
-                                <i class="fas fa-graduation-cap"></i>  
-                            </a>  
+                        <h3 class="subtitle text-accent">Journal Reviewer</h3>  
+                        <div class="flex flex-wrap gap-2">  
+                            <span class="tag">Reliability Engineering & System Safety</span>  
+                            <span class="tag">Safety Science</span>  
+                            <span class="tag">Risk Analysis</span>   
+                            <span class="tag">Journal of Loss Prevention in the Process Industries</span>
+                            <span class="tag">Expert Systems With Applications</span> 
+                            <span class="tag">International Journal of Hydrogen Energy</span>  
+                            <span class="tag">And 15+ more journals</span>  
                         </div>  
                     </div>  
                     
-                    <!-- ClusterMaps Globe - Right Side -->
-                    <div style="flex: 0 0 300px; display: flex; justify-content: center; align-items: center;">
-                        <div id="clustrmaps-widget" style="transform: scale(0.7); transform-origin: center;">
-                            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s"></script>
-                        </div>
-                    </div>
+                    <div>  
+                        <h2 class="section-title">Awards & Honors</h2>  
+                        <ul class="space-y-4">  
+                            <li class="award-item">  
+                                <i class="fas fa-award award-icon"></i>  
+                                <div>  
+                                    <p class="font-semibold">
+                                        <a href="https://efce.info/Awards/Excellence+Awards_Young+Researcher+Awards/Excellence+Award+in+Process+Safety/Award+winners.html" target="_blank" class="hover:text-accent">
+                                            EFCE Excellence Award in Process Safety
+                                        </a>
+                                    </p>  
+                                    <p class="text-light">The award is granted every three years to a doctoral thesis, European Federation of Chemical Engineering, 2025</p>  
+                                </div>  
+                            </li> 
+                            <li class="award-item">  
+                                <i class="fas fa-award award-icon"></i>  
+                                <div>  
+                                    <p class="font-semibold">CSC Postgraduate Scholarship</p>  
+                                    <p class="text-light">China Scholarship Council, 2020~2024</p>  
+                                </div>  
+                            </li>  
+                            <li class="award-item">  
+                                <i class="fas fa-award award-icon"></i>  
+                                <div>  
+                                    <p class="font-semibold">Best Poster Award, 2nd Prize</p>  
+                                    <p class="text-light">17th EFCE International Symposium on Loss Prevention and Safety Promotion in Process Industries, 2022</p>  
+                                </div>  
+                            </li>  
+                            <li class="award-item">  
+                                <i class="fas fa-award award-icon"></i>  
+                                <div>  
+                                    <p class="font-semibold">First Prize of Excellent Graduation Thesis</p>  
+                                    <p class="text-light">University Level (CUMTB), 2017</p>  
+                                </div>  
+                            </li> 
+                        </ul>  
+                    </div>  
                 </div>  
             </div>  
-        </div>  
-    </section>  
+        </section>  
 
-    <!-- Footer -->  
-    <footer>  
-        <div class="container">  
-            <div class="text-center">  
-                <p class="footer-text">© 2025 Yuan Shuaiqi. All Rights Reserved.</p>  
-                <p class="footer-copyright">Last Updated: April 15, 2025</p>  
+        <!-- Patents & Copyright Section -->  
+        <section class="section section-secondary">  
+            <div class="container">  
+                <h2 class="section-title text-center">Patents & Software Copyrights</h2>  
+                
+                <div class="grid grid-2 gap-12">  
+                    <div>  
+                        <h3 class="subtitle text-accent">Patents <span class="text-light" style="font-weight:normal;">(Selected from more than 8 patents)</span></h3>  
+                        <div class="space-y-6">  
+                            <div class="card">  
+                                <h4 class="font-semibold mb-2">A method for prediction, revision and leakage rate estimation of gas leakage in utility tunnels</h4>  
+                                <p class="text-light">Chinese Patent, Patent No. CN201810072744.2, China, 2021</p>  
+                                <p class="text-accent mt-2">Jiansong Wu, Shuaiqi Yuan, Can Zhang</p>  
+                            </div>  
+                            <div class="card">  
+                                <h4 class="font-semibold mb-2">An urban accident disaster evolution simulation and risk prediction and early warning method</h4>  
+                                <p class="text-light">Chinese Patent, Patent No. CN202010640242.2, China, 2021</p>  
+                                <p class="text-accent mt-2">Jiansong Wu, Xiaofeng Hu, Shuaiqi Yuan, Bing Shen, Jitao Cai</p>  
+                            </div>  
+                        </div>  
+                    </div>  
+                    
+                    <div>  
+                        <h3 class="subtitle text-accent">Software Copyrights <span class="text-light" style="font-weight:normal;">(Selected from more than 4 copyrights)</span></h3>  
+                        <div class="space-y-6">  
+                            <div class="card">  
+                                <h4 class="font-semibold mb-2">Software for Prediction of Gas Leakage and Dispersion in Coal Mine Roadways</h4>  
+                                <p class="text-light">Registration Number: 2018SR687198. (Registered in China)</p>  
+                                <p class="text-accent mt-2">Shuaiqi Yuan, Jiansong Wu</p>  
+                            </div>  
+                            <div class="card">  
+                                <h4 class="font-semibold mb-2">Software for Predicting Gas Leakage and Dispersion in Utility Tunnels Based on Data Assimilation Method</h4>  
+                                <p class="text-light">Registration Number: 2018SR687202. (Registered in China)</p>  
+                                <p class="text-accent mt-2">Shuaiqi Yuan, Jiansong Wu</p>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
             </div>  
-        </div>  
-    </footer>  
+        </section>  
 
-    <script>  
-        // Mobile menu toggle  
-        const menuButton = document.getElementById('menu-button');  
-        const mobileMenu = document.getElementById('mobile-menu');  
-        
-        menuButton.addEventListener('click', () => {  
-            mobileMenu.classList.toggle('active');  
-        });  
-        
-        // Close mobile menu when clicking a link  
-        const mobileLinks = mobileMenu.querySelectorAll('a');  
-        mobileLinks.forEach(link => {  
-            link.addEventListener('click', () => {  
-                mobileMenu.classList.remove('active');  
-            });  
-        });  
-        
-        // Smooth scrolling for anchor links  
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {  
-            anchor.addEventListener('click', function(e) {  
-                e.preventDefault();  
+        <!-- Contact Section -->  
+        <section class="section" id="contact">  
+            <div class="container">  
+                <h2 class="section-title text-center">Contact Me</h2>  
                 
-                const targetId = this.getAttribute('href');  
-                const targetElement = document.querySelector(targetId);  
-                
-                if (targetElement) {  
-                    window.scrollTo({  
-                        top: targetElement.offsetTop - 70,  
-                        behavior: 'smooth'  
-                    });  
-                }  
+                <div class="contact-section">  
+                    <div class="contact-layout">  
+                        <!-- Contact Information - Left Side -->
+                        <div class="contact-info">  
+                            <h3 class="subtitle text-accent">Get In Touch</h3>  
+                            <ul class="space-y-4">  
+                                <li class="contact-item">  
+                                    <i class="fas fa-envelope contact-icon"></i>  
+                                    <div>  
+                                        <p class="font-semibold">Email</p>  
+                                        <p class="text-light">shuaiqi.yuan@polyu.edu.hk</p>  
+                                    </div>  
+                                </li>  
+                                <li class="contact-item">  
+                                    <i class="fas fa-phone contact-icon"></i>  
+                                    <div>  
+                                        <p class="font-semibold">Phone</p>  
+                                        <p class="text-light">+86 13126820171</p>  
+                                    </div>  
+                                </li>  
+                                <li class="contact-item">  
+                                    <i class="fas fa-map-marker-alt contact-icon"></i>  
+                                    <div>  
+                                        <p class="font-semibold">Address</p>  
+                                        <p class="text-light">Department of Industrial and Systems Engineering,<br>The Hong Kong Polytechnic University,<br>Hong Kong, Special Administrative Region of China</p>  
+                                    </div>  
+                                </li>  
+                            </ul>  
+                            
+                            <div class="social-links">  
+                                <a href="https://www.linkedin.cn/incareer/in/shuaiqi-yuan-51712223b" class="social-icon">  
+                                    <i class="fab fa-linkedin"></i>  
+                                </a>  
+                                <a href="https://www.researchgate.net/profile/Shuaiqi-Yuan?ev=hdr_xprf" class="social-icon">  
+                                    <i class="fab fa-researchgate"></i>  
+                                </a>  
+                                <a href="#" class="social-icon">  
+                                    <i class="fab fa-github"></i>  
+                                </a>  
+                                <a href="https://scholar.google.com/citations?user=QwgENusAAAAJ&hl=en" class="social-icon">  
+                                    <i class="fas fa-graduation-cap"></i>  
+                                </a>  
+                            </div>  
+                        </div>  
+                        
+                        <!-- ClusterMaps Globe - Right Side -->
+                        <div class="clustrmaps-container">
+                            <div id="clustrmaps-widget">
+                                <!-- ClusterMaps will be loaded here -->
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+            </div>  
+        </section>  
+
+        <!-- Footer -->  
+        <footer>  
+            <div class="container">  
+                <div class="text-center">  
+                    <p class="footer-text">© 2025 Yuan Shuaiqi. All Rights Reserved.</p>  
+                    <p class="footer-copyright">Last Updated: April 15, 2025</p>  
+                </div>  
+            </div>  
+        </footer>  
+
+        <script>  
+            // Mobile menu toggle  
+            const menuButton = document.getElementById('menu-button');  
+            const mobileMenu = document.getElementById('mobile-menu');  
+            
+            menuButton.addEventListener('click', () => {  
+                mobileMenu.classList.toggle('active');  
             });  
-        });  
-    </script>  
+            
+            // Close mobile menu when clicking a link  
+            const mobileLinks = mobileMenu.querySelectorAll('a');  
+            mobileLinks.forEach(link => {  
+                link.addEventListener('click', () => {  
+                    mobileMenu.classList.remove('active');  
+                });  
+            });  
+            
+            // Smooth scrolling for anchor links  
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {  
+                anchor.addEventListener('click', function(e) {  
+                    e.preventDefault();  
+                    
+                    const targetId = this.getAttribute('href');  
+                    const targetElement = document.querySelector(targetId);  
+                    
+                    if (targetElement) {  
+                        window.scrollTo({  
+                            top: targetElement.offsetTop - 70,  
+                            behavior: 'smooth'  
+                        });  
+                    }  
+                });  
+            });  
+            
+            // Load ClusterMaps script after DOM is ready
+            function loadClusterMaps() {
+                // Create the script element
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.id = 'clstr_globe';
+                script.src = '//clustrmaps.com/globe.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s';
+                
+                // Add error handling
+                script.onerror = function() {
+                    console.log('ClusterMaps failed to load');
+                    // Optionally add a fallback or placeholder
+                    document.getElementById('clustrmaps-widget').innerHTML = '<p style="text-align: center; color: #666;">Visitor Map Loading...</p>';
+                };
+                
+                // Append to the clustrmaps-widget div
+                document.getElementById('clustrmaps-widget').appendChild(script);
+            }
+            
+            // Load ClusterMaps when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadClusterMaps);
+            } else {
+                loadClusterMaps();
+            }
+        </script>  
 
 </body>  
 </html>
