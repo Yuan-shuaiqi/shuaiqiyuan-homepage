@@ -134,7 +134,7 @@
                     <div class="card">  
                         <div class="flex justify-between mb-4">  
                             <h3 class="card-title">Research Assistant</h3>  
-                            <span class="text-accent">Jul 2021-Mar 2022</span>  
+                            <span class="text-accent">Apr 2021-Oct 2021</span>  
                         </div>  
                         <p class="card-subtitle">Safety and Security Science Group, TU Delft, The Netherlands</p>  
                         <p class="mb-2">Project: <span class="text-accent">"Collaboration on Safety - Instrument (COSI)"</span></p>  
@@ -475,8 +475,9 @@
             <h2 class="section-title text-center">Contact Me</h2>  
             
             <div class="contact-section">  
-                <div class="grid grid-2 gap-8">  
-                    <div>  
+                <div style="display: flex; align-items: flex-start; gap: 3rem; max-width: 900px; margin: 0 auto;">  
+                    <!-- Contact Information - Left Side -->
+                    <div style="flex: 1; min-width: 400px;">  
                         <h3 class="subtitle text-accent">Get In Touch</h3>  
                         <ul class="space-y-4">  
                             <li class="contact-item">  
@@ -518,23 +519,12 @@
                         </div>  
                     </div>  
                     
-                    <div>  
-                        <h3 class="subtitle text-accent">Send Me a Message</h3>  
-                        <form>  
-                            <div class="form-group">  
-                                <input type="text" placeholder="Your Name" class="form-control">  
-                            </div>  
-                            <div class="form-group">  
-                                <input type="email" placeholder="Your Email" class="form-control">  
-                            </div>  
-                            <div class="form-group">  
-                                <textarea placeholder="Your Message" rows="4" class="form-control"></textarea>  
-                            </div>  
-                            <button type="submit" class="btn btn-primary">  
-                                Send Message  
-                            </button>  
-                        </form>  
-                    </div>  
+                    <!-- ClusterMaps Globe - Right Side -->
+                    <div style="flex: 0 0 300px; display: flex; justify-content: center; align-items: center;">
+                        <div id="clustrmaps-widget" style="transform: scale(0.7); transform-origin: center;">
+                            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s"></script>
+                        </div>
+                    </div>
                 </div>  
             </div>  
         </div>  
@@ -584,10 +574,6 @@
             });  
         });  
     </script>  
-        
-    <!-- Add the ClusterMaps script here -->
-    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=LxZGBzqkDsSkTx_BYpBU06s7VtgB7Wm47mhwD4a883s"></script>
 
 </body>  
 </html>
-
